@@ -1,0 +1,11 @@
+/* example 001 */
+#include <stdio.h> 		// include the headerfile stdio.h
+
+/* main() is the entry point
+of each C program – this is a comment and it’s not part of code */
+
+int main(void) 
+{
+    printf("Hello World\n"); 	// print out the characters within " "
+    return 0;
+}
