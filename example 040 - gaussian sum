@@ -1,0 +1,18 @@
+/* example 040 - gaussian sum */
+#include <stdio.h>
+
+#define DATAVALUES  100
+
+int main()
+{
+    int sum[DATAVALUES];    // Array of int values
+    int result=0;
+
+    for(int i= 1; i <= DATAVALUES; i++) {
+        sum[i]=i;		
+        result += sum[i];
+        printf("Sum [%d] = %d\n", i,result);
+    }
+
+    return 0;
+}
