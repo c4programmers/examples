@@ -1,4 +1,4 @@
-/* example 002 */
+/* example 002 – calculate the sine */
 #include <stdio.h>
 #include <math.h>
 
@@ -8,9 +8,10 @@ int main (void)
 {
    double degree, result, rad;
 
-   degree = 60.0;           // angle in degree
-   rad = PI / 180;          // conversion degree to radians
+   degree = 60.0;           	// angle in degree
+   rad = PI / 180;          	// conversion degree to radians
    result = sin(degree * rad);  // call the function sin with radians as parameter
    printf("The sine of %.2lf degree is %lf ", degree, result);
+
    return(0);
 }
