@@ -1,0 +1,13 @@
+/* example 042 - macros */
+#include <stdio.h>
+
+#define SWAPP(a,b) {temp=b; b=a; a=temp;}
+
+int main(void)
+{
+    int temp, number1 = 2, number2 = 8;
+    printf("number1 = %d, number2 = %d\n", number1, number2); 
+    SWAPP(number1, number2);
+    printf("number1 = %d, number2 = %d\n", number1, number2);
+    return 0;
+}
