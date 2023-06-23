@@ -1,0 +1,20 @@
+/* example 005 - differences between %i and %d format specifier by using scanf() */
+#include <stdio.h>
+
+int main()
+{
+    int a, b, c;
+
+    printf("Enter a value in decimal format: ");
+    scanf("%d", &a);
+
+    printf("Enter a value in octal format: ");
+    scanf("%i", &b);
+
+    printf("Enter value of c in hexadecimal format: ");
+    scanf("%i", &c);
+
+    printf("Dec = %i, Oct = %i, Hex = %i", a, b, c);
+
+    return 0;
+}
