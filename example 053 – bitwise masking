@@ -1,0 +1,17 @@
+/* example 053 – bitwise masking */
+#include <stdio.h>
+
+int main(void)
+{
+   unsigned char x = 10;		// only positive numbers (0…255)
+
+   printf("x before = %d\n",x);
+
+   x = ~x;			// logical negation
+   printf("x after = %d\n",x);
+
+   x = x & 15;			// 15 = 0000 1111
+   printf("x after masking the upper 4 bits = %d\n",x);
+
+   return 0;
+}
