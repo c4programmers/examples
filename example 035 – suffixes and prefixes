@@ -1,0 +1,17 @@
+/* example 035 – suffixes and prefixes */
+#include <stdio.h>
+
+int main(void)
+{
+   int a = 123;    // dezimal integer literal
+   int b = 0123;   // Oktal integer literal
+   int c = 0x1F;   // hexadezimal integer literal
+   int d = 0b101;  // binär integer literal
+
+   printf("a = %d\n",a);    
+   printf("b = %d\n",b);    
+   printf("c = %d\n",c);    
+   printf("d = %d\n",d);   
+
+   return 0;
+}
