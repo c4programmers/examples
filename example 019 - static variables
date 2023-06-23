@@ -1,0 +1,25 @@
+/* example 019 - static variables */
+#include <stdio.h>
+
+void counter1(void) {          	// Function counter1
+   int i = 1;                 	// local variable i (non-static)            
+   printf("i = %d\n",i);      	
+   i++;				// increment i by 1
+}
+
+void counter2(void) {          	// Function counter2
+   static int i = 1;          	// local static variable i
+   printf("i = %d\n",i);      	
+   i++;				// increment i by 1
+}
+
+int main(void)
+{
+   counter1();		// output: i = 1
+   counter1();		// output: i = 1
+   counter1();		// output: i = 1
+   counter2();		// output: i = 1
+   counter2();		// output: i = 2
+   counter2();		// output: i = 3
+   return 0;
+}
