@@ -1,0 +1,12 @@
+/* example 049 – bitwise AND (masking) */
+#include <stdio.h>
+
+int main(void)
+{
+   int x = 10;
+   printf("x before = %d\n",x);	// 10dec = 	1010
+
+   x = x & 3;			// Masking with 	0011
+   printf("x after = %d\n",x);	// Result:	0010
+   return 0;
+}
