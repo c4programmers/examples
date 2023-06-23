@@ -1,0 +1,17 @@
+/* example 024 - the data type char */
+#include <stdio.h>
+
+int main(void)
+{
+   char a,b,c;
+   a = 'A';
+   b = 65;
+   c = 64;
+
+   printf("Content of a = %c\n",a); 	// Output: A
+   printf("Content of a = %d\n",a); 	// Output: 65 (Dezimalnotation mit %d)
+   printf("Content of b = %c\n",b); 	// Output: A
+   printf("Content of c = %c\n",c); 	// Output: @
+
+   return 0;
+}
