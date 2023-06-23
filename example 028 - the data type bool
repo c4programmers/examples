@@ -1,0 +1,18 @@
+/* example 028 - the data type bool */
+#include <stdio.h>
+#include <stdbool.h>
+
+bool switch1 = true;
+bool switch2 = false;
+
+int main(void)
+{
+   if(switch1 == 1) {    // if switch1 = 1 (true)
+      printf("Switch 1 is on\n");	// Output: Switch 1 is on
+   }
+
+   if(switch2 == 0) {    // if switch2 = 0 (false)
+      printf("Switch 2 is off\n");	// Output: Switch 2 is off
+   }
+   return 0;
+}
