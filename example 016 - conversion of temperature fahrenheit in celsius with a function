@@ -1,0 +1,16 @@
+/* example 016 - conversion of temperature fahrenheit in celsius with a function */
+#include <stdio.h>
+
+void calcFahrenheitinCelsius(void); // Function Prototype
+
+int main(void)
+{
+   calcFahrenheitinCelsius();       // Calls the Function calcFahrenheitinCelsius()
+   return 0;
+}
+
+void calcFahrenheitinCelsius(void) {
+   double fahrenheit=100, celsius=0;
+   celsius = ((5.0/9.0)*(fahrenheit-32));
+   printf("%.0f degrees Fahrenheit = %.2f degrees Celsius\n",fahrenheit, celsius);
+}
