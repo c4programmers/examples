@@ -1,0 +1,14 @@
+/* example 045 – arithmetic operators */
+#include <stdio.h>
+#include <math.h>   
+
+int main(void)
+{
+   double x = 45;
+
+   printf("\nThe sine of %.2lf degrees = %lf", x, sin(x));
+   printf("\nThe cosine of %.2lf degrees = %lf", x, cos(x));
+   printf("\nThe tangent of %.2lf degrees = %lf", x, tan(x));
+
+   return 0;
+}
