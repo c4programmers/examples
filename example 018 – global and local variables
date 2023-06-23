@@ -1,0 +1,20 @@
+/* example 018 – global and local variables */
+#include <stdio.h>
+
+int i=2;    			// global Variable i=2
+
+void add(void) {
+   int result = i+i;    		// local Variable result = 4
+   int i = 8;			// local Variable x = 8
+   printf("result = %d\n", result);
+}
+
+int main(void)
+{
+   add();      			// calls Function add()
+
+   int result = 5 * x;  		// ! Error, because x is not visible
+
+   printf("result = %d\n", result);
+   return 0;
+}
