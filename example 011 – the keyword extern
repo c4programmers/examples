@@ -1,0 +1,27 @@
+// main.c
+/* example 011 – the keyword extern */
+#include <stdio.h>
+
+int x, y;            	
+
+void add(void);       	// Declaration of Function add() which is located in add.c
+
+int main(void)              	
+{
+     add();             // Function call of add() in file add.c
+     printf("Result = %d\n",x);	// Result = 10
+     return 0;
+}
+
+
+
+// add.c
+extern int x;           // Declaration of the global variable x
+extern int y;           // Declaration of the global variable y
+
+void add(void)      		// Definition of Funktion add()
+{
+     x = 4;			        // Accessing x in main.c
+     y = 6;			        // Accessing y in main.c
+     x = x + y;         // Accessing x and y in main.c
+}
