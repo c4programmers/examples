@@ -1,0 +1,16 @@
+/* example 038 - explicit typcasting */
+#include <stdio.h>
+
+int main(void)
+{
+   int a = 5, b = 3;
+   double x = 3.5244, y;
+
+   y = (double) a + (double) b;
+   printf("Value = %f\n",y); 	
+   y = (double) (a+b);
+   printf("Value = %f\n",y); 	
+   y = (double) a + x;
+   printf("Value = %f\n",y); 	
+   return 0;
+}
