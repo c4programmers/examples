@@ -1,0 +1,15 @@
+/* example 027 - the unicode standard */
+#include <stdio.h>
+#include <stddef.h>
+#include <locale.h>
+
+int main(void) 
+{
+   setlocale(LC_ALL, "en_US.UTF-8");
+
+   /* start with i = 33 (Exclamation Mark (!)) */
+   for(int i=33; i<=1000; i++) {
+      printf("%lc\t",i);
+   }
+   return 0;
+}
