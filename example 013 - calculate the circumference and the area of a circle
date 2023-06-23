@@ -1,0 +1,18 @@
+/* example 013 - calculate the circumference and the area of a circle */
+#include <stdio.h>
+
+const double PI = 3.1415926;	// Constant with the value of PI 
+const double RADIUS = 4.0;   	// Constant with the value 4
+
+int main(void)
+{
+   double c=0, a=0;
+
+   c = 2 * RADIUS * PI;
+   a = RADIUS * RADIUS * PI;
+	
+   printf("Circumference: \t%f",c);
+   printf("\nArea: \t\t\t%f",a);
+
+   return 0;
+}
