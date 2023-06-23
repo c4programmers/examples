@@ -1,0 +1,34 @@
+/* example 004 – format specifier with printf() */
+#include <stdio.h>
+
+int main()
+{
+    int x = 1234;
+    float f = 3.1415;
+    double d = 1012.3456789;
+    char ch = 'a', str[] = "Hello World!";
+
+    printf("%d\n",x);       //1234
+    printf("%4d\n",x);      //1234
+    printf("%5d\n",x);      // 1234
+    printf("%6d\n",x);      //  1234
+    printf("x = %10.0lf\n",d); //x =       1012
+    printf("x = %10.1lf\n",d); //x =     1012.3
+    printf("x = %10.2lf\n",d); //x =    1012.35
+    printf("x = %10.3lf\n",d); //x =   1012.346
+    printf("%c\n", ch); //printing character data
+    printf("decimal %d or integer %i\n", x, x); //printing decimal or integer data
+    printf("%d\n", ch); //printing dec representation (ASCII code) of character data
+    printf("%f\n", f); //print float value
+    printf("%lf\n", d); //print double value
+    printf("%e\n", d); //print float value in scientific notation
+    printf("%d, %x, %o\n",x,x,x); //print in decimal, hexadecimal and octal format
+    printf("%c\n",100); // print the ASCII sign of decimal number 100
+    printf("%s\n", str); // print a string
+    printf("%15s\n", str); //shift to the right 15 characters including the string
+    /*shift to the right 15 char incl. the string, and print string up to 4 char */
+    printf("%15.4s\n", str);
+    printf("%-.4s\n", str); //left align and print string up to 4 character
+
+    return 0;
+}
