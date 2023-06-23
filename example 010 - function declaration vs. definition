@@ -1,0 +1,19 @@
+/* example 010 - function declaration vs. definition */
+#include <stdio.h>
+
+void add(void);     	// 1.) Declaration (Function Prototype)
+
+int x;          		// 2.) Definition
+int y = 1;           	// 3.) Definition and Initialization
+
+int main(void)      	// 4.) Definition
+{
+   x = 7;            	// 5.) Initialization
+   add();            	// 6.) Function Call
+   return 0;
+}
+
+void add(void)      	// 7.) Definition
+{
+  printf("x + y = %d", x+y);     	
+}
