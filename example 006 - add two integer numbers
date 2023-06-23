@@ -1,0 +1,10 @@
+/* example 006 - add two integer numbers */
+#include <stdio.h>
+
+int main (void)					
+{          
+   int a=10, b=2, sum=0;
+   sum = a + b;
+   printf("The result of a and b %i + %i = %i\n",a ,b ,sum);
+   return 0;	
+}
