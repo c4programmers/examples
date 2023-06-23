@@ -1,0 +1,10 @@
+/* example 007 – add floating point with int */
+#include <stdio.h>
+
+int main (void)					
+{          
+   float a=3.14, b=2, sum=0;
+   sum = a + b;
+   printf("The result of a and b = %f + %f = %f\n",a ,b ,sum);	
+   return 0;
+}
