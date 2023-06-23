@@ -1,0 +1,27 @@
+/* example 066 – calculate the sum of numbers and exit with number 0 */
+#include <stdio.h>
+
+int main (void)
+{
+   int num=0, sum=0;
+
+   printf("Sum of numbers-Entering a number < 0 it will not be added (Abort with 0)\n");
+   printf("Enter a number: ");
+
+   while(1) {
+        scanf("%i",&num);
+
+        if(num <0) {
+            printf("Enter new number: ");
+            continue;
+        }
+        else if(num == 0)
+            break;
+
+        printf("\nSum: %i\n",(sum += num));
+        printf("Enter new number: ");
+   }
+   printf("END");
+
+   return 0;
+}
