@@ -1,4 +1,4 @@
-/* example 001 */
+/* example 001 - Hello World */
 #include <stdio.h> 		// include the headerfile stdio.h
 
 /* main() is the entry point
