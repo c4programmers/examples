@@ -1,0 +1,17 @@
+/* example 003 – Check if an input is an upper- or lowercase */
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+    char c1 = 'a', c2 = 'b', c3 = 'c', c4 = 'A', c5 = 'B', c6 = 'C';
+
+    printf("The return value when %c is passed to islower(): %d\n", c1, islower(c1));
+    printf("The return value when %c is passed to islower(): %d\n", c2, islower(c2));
+    printf("The return value when %c is passed to islower(): %d\n", c3, islower(c3));
+    printf("The return value when %c is passed to islower(): %d\n", c4, islower(c4));
+    printf("The return value when %c is passed to islower(): %d\n", c5, islower(c5));
+    printf("The return value when %c is passed to islower(): %d\n", c6, islower(c6));
+
+    return 0;
+}
