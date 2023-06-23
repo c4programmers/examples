@@ -1,0 +1,26 @@
+/* example 044 – the keyword typedef */
+#include <stdio.h>
+#include <string.h>
+
+typedef struct CARS {
+   char brand[50];
+   char type[50];
+   int power;
+   double price;
+} car;
+
+int main(void) 
+{
+   car car1; // car1 is the structure variable of type car
+
+   strcpy( car1.brand, "BMW");
+   strcpy( car1.type, "530d");
+   car1.power = 265;
+   car1.price = 65990;
+
+   printf( "Brand : %s\n", car1.brand);
+   printf( "Type : %s\n", car1.type);
+   printf( "Power : %d hp\n", car1.power);
+   printf( "Price : %0.2lf\n\n", car1.price);
+   return 0;
+}
