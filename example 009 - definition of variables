@@ -1,4 +1,4 @@
-/* example 009 - Definition of Variables */
+/* example 009 - definition of variables */
 #include <stdio.h>
 
 int main()
