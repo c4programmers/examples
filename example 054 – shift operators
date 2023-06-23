@@ -1,0 +1,20 @@
+/* example 054 – shift operators */
+#include <stdio.h>
+
+int main(void)
+{
+   unsigned char x = 8;
+
+   printf("Start value of x = %d\n",x);
+
+   x <<= 1;		// Shift x to the left by one position
+   printf("x << 1 = %d\n",x);
+
+   x <<= 2;		// Shift x to the left by two positions
+   printf("x << 2 = %d\n",x);
+
+   x >>= 4;		// Shift x to the right by four positions
+   printf("x >> 4 = %d\n",x);
+
+   return 0;
+}
