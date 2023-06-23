@@ -1,0 +1,15 @@
+/* example 037 - implicit vs. explicit typecasting */
+#include <stdio.h>
+
+int main(void)
+{
+   int x = 5, y = 2;
+   float z;
+
+   z = x / y;		      	// Implicit typecasting because z is a float
+   printf("Implicit: z = %f\n", z);            	
+
+   z = (float) x / (float) y;	// Explicit typecasting
+   printf("Explicit: z = %f\n", z);         	
+   return 0;
+}
