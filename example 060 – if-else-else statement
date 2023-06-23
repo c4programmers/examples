@@ -1,0 +1,25 @@
+/* example 060 – if-else-else statement */
+#include <stdio.h>
+
+int main(void)
+{
+   int num1, num2;
+
+   printf("Please enter the first number! ");
+   scanf("%i",&num1);
+
+   printf("Please enter the second number! ");
+   scanf("%i",&num2);
+
+   if (num1 > num2) {
+      printf("The first number is bigger!");
+   }
+   else if (num1 == num2) {
+      printf("Both numbers are the same!");
+   }
+   else {
+      printf("The second number is bigger!");
+   }
+
+   return 0;
+}
