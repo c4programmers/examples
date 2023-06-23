@@ -1,0 +1,11 @@
+/* example 025 - the data type wchar_t */
+#include <stdio.h>
+#include <stddef.h>
+
+int main(void) 
+{
+   wchar_t wc = L'x';	// don’t forget the prefix L
+   printf("%lc \n", wc); // Output: x
+   printf("wchar_t: %lu Bytes\n", sizeof(wchar_t));  // Output: wchar_t: 4 Bytes
+   return 0;
+}
