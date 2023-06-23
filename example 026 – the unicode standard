@@ -1,0 +1,13 @@
+/* example 026 – the unicode standard */
+#include <stdio.h>
+#include <stddef.h>
+#include <locale.h>
+
+int main(void) 
+{
+   /* set US UTF-8 english */
+   setlocale(LC_ALL, "en_US.UTF-8");
+   wchar_t wc = 0x3b1;
+   printf("%lc \n", wc);		// Output: α
+   return 0;
+}
