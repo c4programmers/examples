@@ -1,0 +1,10 @@
+/* example 047 – comparison operators */
+#include <stdio.h>
+
+int main(void)
+{
+   printf("True case: The value of 2 + 3 == 5: %d",2 + 3 == 5);
+   printf("\nFalse case: The value of 2 + 3 == 5: %d",2 + 3 == 4);
+
+   return 0;
+}
