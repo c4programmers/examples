@@ -1,0 +1,20 @@
+/* example 034 - the operator sizeof() */
+#include <stdio.h>
+#include <stddef.h>
+
+int main(void)
+{
+   printf("char         : %d Byte\n" , sizeof(char));		
+   printf("wchar_t      : %d Byte\n" , sizeof(wchar_t)); 		
+   printf("int          : %d Byte\n", sizeof(int)); 		
+   printf("long         : %d Byte\n", sizeof(long int)); 		
+   printf("long long    : %d Byte\n", sizeof(long long int)); 	
+   printf("float        : %d Byte\n", sizeof(float)); 		
+   printf("double       : %d Byte\n", sizeof(double)); 		
+   printf("long double  : %d Byte\n", sizeof(long double)); 	
+   printf("Hello        : %d Byte\n", sizeof("Hello"));		
+   printf("A            : %d Byte\n", sizeof((char)'A')); 		
+   printf("1234         : %d Byte\n", sizeof(1234)); 
+	
+   return 0;	
+}
