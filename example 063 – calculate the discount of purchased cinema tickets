@@ -1,0 +1,26 @@
+/* example 063 – calculate the discount of purchased cinema tickets */
+#include <stdio.h>
+
+int main(void)
+{
+   int quantity, discount=0;
+   double price=15.2, total;
+   printf("A ticket costs $%.2lf",price);
+   printf("\nHow many tickets would you like to buy?");
+   scanf("%i",&quantity);
+
+   if (quantity > 40) {
+      total = quantity * price * 0.8;
+      discount = 20;
+   }
+   else if (quantity > 10) {
+      total = quantity * price * 0.9;
+      discount = 10;
+   }
+   else {
+      total = quantity * price;
+   }
+
+   printf("You get %i %% discount! The total amount is %.2lf $",discount, total);
+   return 0;
+}
