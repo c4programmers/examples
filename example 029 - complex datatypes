@@ -1,0 +1,12 @@
+/* example 029 - complex datatypes */
+
+#include <stdio.h>
+#include <complex.h>
+
+double complex z = 1.0 + 2.0*I;   // Imaginary part is denoted by *I
+
+int main(void)
+{
+   printf("Magnitude of z = %zu Byte\n", sizeof (double complex));
+   printf("Real part = %.2f, Imaginary part = %.2f\n", creal(z), cimag(z));
+}
