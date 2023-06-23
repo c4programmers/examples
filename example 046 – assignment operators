@@ -1,0 +1,14 @@
+/* example 046 – assignment operators */
+#include <stdio.h>
+
+int main(void)
+{
+    int a=4, b=4, x, y;
+    printf("\na = %d, b = %d",a,b);
+    x = a++;	// postfix
+    printf("\nPostfix: a = %d, x = %d",a,x);
+    y = ++b;	// prefix
+    printf("\nPrefix: b = %d, y = %d",b,y);
+
+	return 0;
+}
