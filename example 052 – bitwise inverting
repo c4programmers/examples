@@ -1,0 +1,13 @@
+/* example 052 – bitwise inverting */
+#include <stdio.h>
+
+int main(void)
+{
+   unsigned char x = 10; 	// Only positive numbers (0…255)
+
+   printf("x before =%d\n",x);
+   x = ~x;		  	// Logic NOT (0000 1010 -> 1111 0101)
+
+   printf("x after =%d\n",x);
+   return 0;
+}
