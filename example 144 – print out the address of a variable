@@ -1,0 +1,16 @@
+/* example 144 – print out the address of a variable */
+#include <stdio.h>
+
+int main(void)
+{
+   int x = 10;
+   float y = 1.41;
+
+   printf("The memory address of x = %p\n", &x);
+   printf("The content of the memory address = %d\n", x);
+
+   printf("The memory address of y = %p\n", &y);
+   printf("The content of the memory address = %f\n", y);
+
+   return 0;
+}
