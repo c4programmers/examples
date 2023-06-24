@@ -1,0 +1,20 @@
+/* example 124 – compare three strings */
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char str1[] = "abcdefg", str2[] = "abcDefg", str3[] = "abcdefg";
+    int result;
+
+    result = strcmp(str1, str2);
+    printf("strcmp(str1, str2) = %d\n", result);
+
+    result = strcmp(str1, str3);
+    printf("strcmp(str1, str3) = %d\n", result);
+
+    result = strcmp(str2, str3);
+    printf("strcmp(str2, str3) = %d\n", result);
+
+    return 0;
+}
