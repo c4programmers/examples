@@ -1,0 +1,28 @@
+/* example 191 – structures */
+#include <stdio.h>
+#include <string.h>
+
+struct Books {
+    int id;
+    char title[100];
+    char author[50];
+    double price;
+};
+
+int main(void)
+{
+    struct Books action     = {1234, "Artemis", "Andy Weir", 26.68};
+    struct Books adventure  = {1235, "Congo", "Michael Crichton", 28.69};
+    struct Books fantasy    = {1236, "The Witching Hour", "Anne Rice", 33.87};
+    struct Books history    = {1237, "Our Beloved Kin", "Lisa Brooks", 24.90};
+    printf("ID: %d, Title: %s, Author: %s, Price: %.2lf\n",
+           action.id, action.title, action.author, action.price);
+    printf("ID: %d, Title: %s, Author: %s, Price: %.2lf\n",
+           adventure.id, adventure.title, adventure.author, adventure.price);
+    printf("ID: %d, Title: %s, Author: %s, Price: %.2lf\n",
+           fantasy.id, fantasy.title, fantasy.author, fantasy.price);
+    printf("ID: %d, Title: %s, Author: %s, Price: %.2lf\n",
+           history.id, history.title, history.author, history.price);
+
+   return 0;
+}
