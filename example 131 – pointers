@@ -1,0 +1,18 @@
+/* example 131 – pointers */
+#include <stdio.h>
+
+int main(void)
+{
+   float a=0, b=0, *ptr_a=NULL;
+
+   ptr_a = &a;	// Pointer ptr_a stores the address of a
+   *ptr_a = 12;	// Writes 12 in a
+
+   printf("a = %.2f\n",a);
+   *ptr_a += 5.5;	// Adds 5.5 to the existing value of a
+
+   printf("a = %.2f\n",a);
+   b = *ptr_a + 5;	// Adds 5 to the existing value of a and stores the result in b
+
+   printf("b = %.2f\n",b);
+}
