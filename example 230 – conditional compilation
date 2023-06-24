@@ -1,0 +1,41 @@
+/* example 230 – conditional compilation */
+#include <stdio.h>
+
+#define DEBUG 1
+
+void flipArray(int arr[], int n) {
+   int temp, i;
+   for (i = 0; i < n/2; i++) {
+      temp = arr[i];
+      arr[i] = arr[n-1-i];
+      arr[n-1-i] = temp;
+   }
+}
+
+int main()
+{
+   int arr[] = {1, 2, 3, 4, 5};
+   int n = sizeof(arr)/sizeof(arr[0]);
+   int i;
+
+   printf("Original array: ");
+   for (i = 0; i < n; i++) {
+      printf("%d ", arr[i]);
+   }
+
+   flipArray(arr, n);
+
+   #if DEBUG == 1
+        printf("\nFlipped array: ");
+        for (i = 0; i < n; i++) {
+            printf("%d ", arr[i]);
+        }
+   #elif DEBUG == 2
+        printf("\nFlipped array with addresses: \n");
+        for (i = 0; i < n; i++) {
+            printf("%d \t %p \n", arr[i], &arr[i]);
+        }
+   #endif // DEBUG
+
+   return 0;
+}
