@@ -1,0 +1,24 @@
+/* example 120 – handling with strings – using fgets() an puts() */
+#include <stdio.h>
+
+int main(void)
+{
+  char name[20], *ptrName;
+
+  ptrName = name;
+
+  printf("Address of the array name[]: %p", ptrName);
+  printf("\nEnter your name: ");
+
+  /* in case of success fgets() returns the address of name */
+  if (fgets(name, sizeof(name), stdin) == ptrName ) {
+      printf("Hello %s", name);
+      puts(name); // displays only the string
+  }
+  else {
+      printf("Input error!\n");
+      return 1;
+  }
+
+  return 0;
+}
