@@ -1,0 +1,25 @@
+/* example 128 – pointers */
+#include <stdio.h>
+
+int main(void)
+{
+   char a='A', *ptr_a = &a;
+   int b=1000, *ptr_b = &b;
+
+   printf("a = %c = dec %d\n",a,a);
+   printf("b = %d\n",b);
+
+   printf("Address of a = %p\n",ptr_a);
+   printf("Value of a = %c = %d\n",*ptr_a, *ptr_a);
+
+   printf("Address of b = %p\n",ptr_b);
+   printf("Value of b = %d\n",*ptr_b);
+
+   printf("Address of ptr_a = %p\n",&ptr_a);
+   printf("Address of ptr_b = %p\n",&ptr_b);
+
+   printf("Size of ptr_a = %d\n",sizeof(ptr_a));
+   printf("Size of ptr_b = %d\n",sizeof(ptr_b));
+
+   return 0;
+}
