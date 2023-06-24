@@ -1,0 +1,17 @@
+/* example 130 – pointers */
+#include <stdio.h>
+
+int main(void)
+{
+   int a = 2, b = 4, temp;
+   int *ptr_a = &a, *ptr_b = &b;
+
+   printf("a = %d, b = %d\n", a, b);
+
+   temp = *ptr_a;	// temp gets the value pointed to by *ptr_a. temp = value of a
+   *ptr_a = *ptr_b;	// The value pointed to by *ptr_a is overwritten with the value // pointed to by *ptr_b, a now gets the value of b
+   *ptr_b = temp;	// The value pointed to by *ptr_b is overwritten with the value // of temp and that is the value of a
+   printf("a = %d, b = %d\n", a, b);
+
+   return 0;
+}
