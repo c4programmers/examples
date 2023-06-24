@@ -1,0 +1,30 @@
+/* example 100 – call by value vs. call by reference */
+#include <stdio.h>
+
+void callByValue(int x) {
+
+    printf("callByValue: Address of x = %p\n", &x);
+    x = 10;
+}
+
+void callByReference(int *x) {
+
+    printf("callByReference: Address of x = %p\n", x);
+    *x = 10;
+}
+
+int main()
+{
+    int var = 2;
+
+    printf("main: Address of var = %p\n", &var);
+    printf("Value of var: %d\n\n", var);
+
+    callByValue(var);
+    printf("Value of var after calling callByValue: %d\n\n", var);
+
+    callByReference(&var);
+    printf("Value of var after calling callByReference: %d\n", var);
+
+    return 0;
+}
