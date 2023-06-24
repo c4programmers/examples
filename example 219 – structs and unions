@@ -1,0 +1,49 @@
+/* example 219 – structs and unions */
+#include <stdio.h>
+
+struct Store {
+    union {
+        struct {
+            double price;
+            int id;
+            char *title;
+            char *author;
+        } book;
+
+        struct {
+            double price;
+            int id;
+            char *color;
+            char *size;
+        } shirt, cap;
+    } item;
+} store;
+
+int main(void)
+{
+    store.item.book.title = "It starts with us";
+    store.item.book.author = "Colleen Hoover";
+    store.item.book.id = 12345;
+    store.item.book.price = 9.32;
+
+    printf("id: %d, title: %s, author: %s, price %.2lf$\n",store.item.book.id, 
+           store.item.book.title, store.item.book.author, store.item.book.price);
+
+    store.item.shirt.color = "red";
+    store.item.shirt.size = "XL";
+    store.item.shirt.id = 12346;
+    store.item.shirt.price = 19.90;
+
+    printf("id: %d, shirt color: %s, size: %s, price %.2lf$\n",store.item.shirt.id, 
+           store.item.shirt.color, store.item.shirt.size, store.item.shirt.price);
+
+    store.item.cap.color = "blue";
+    store.item.cap.size = "One Size";
+    store.item.cap.id = 12347;
+    store.item.cap.price = 24.90;
+
+    printf("id: %d, cap color: %s, size: %s, price %.2lf$\n",store.item.cap.id, 
+           store.item.cap.color, store.item.cap.size, store.item.cap.price);
+    printf("Size of Store:%d byte",sizeof(store));
+    return 0;
+}
