@@ -1,0 +1,11 @@
+/* example 116 - strings */
+#include <stdio.h>
+
+int main(void)
+{
+    char myArray[20] = {'C',' ','i','s',' ','g','r','e','a','t','!','\0' };
+
+    printf("%s\n", myArray);
+
+    return 0;
+}
