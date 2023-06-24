@@ -1,0 +1,15 @@
+/* example 214 – data alignment */
+#include <stdio.h>
+
+struct myStruct {
+    char a;     // 1 byte
+    int b;      // 4 byte
+    double c;   // 8 byte
+};
+
+int main(void)
+{
+   printf("Size of myStruct: %d byte\n", sizeof(struct myStruct));
+
+   return 0;
+}
