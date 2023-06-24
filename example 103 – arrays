@@ -1,0 +1,19 @@
+/* example 103 – arrays */
+#include <stdio.h>
+
+int main(void) 
+{
+    int iArray[3] = {0}; // initialize all elements with 0
+
+    /* Initialize array with values */
+    iArray[0] = 10;
+    iArray[1] = 20;
+    iArray[2] = 30;
+
+    /* Output the content of the array elements and their address */
+    printf("iArray[0] = %d @ Address %p\n", iArray[0], &iArray[0]);
+    printf("iArray[1] = %d @ Address %p\n", iArray[1], &iArray[1]);
+    printf("iArray[2] = %d @ Address %p\n", iArray[2], &iArray[2]);
+
+    return 0;
+}
