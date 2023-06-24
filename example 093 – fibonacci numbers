@@ -1,0 +1,34 @@
+/* example 093 – fibonacci numbers */
+#include <stdio.h>
+
+int fibonacciNumber(int n) {
+
+    switch (n) {
+        case 0: return 0; break;
+        case 1: return 1; break;
+        default: return fibonacciNumber(n-2) + fibonacciNumber(n-1); break;
+    }
+}
+
+int main(void)
+{
+    int n, clearBuffer;
+    char answer;
+
+    do {
+        printf("Fibonacci sequence calculator - Enter a number: ");
+        scanf("%i",&n);
+
+        for(int i = 0; i < n; i++) {
+            printf("%d ",fibonacciNumber(i));
+        }
+
+        while ((clearBuffer = getchar()) != EOF && clearBuffer != '\n');
+
+        printf("\n\nNew calculation? [y / n]");
+        scanf("%c",&answer);
+
+    }while ((answer == 'y') || (answer == 'Y'));
+
+    return 0;
+}
