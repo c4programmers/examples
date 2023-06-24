@@ -1,0 +1,13 @@
+/* example 152 - problems with scanf() */
+#include <stdio.h>
+
+void main()
+{
+   char strg[50];
+
+   printf("Please enter a String! ");
+   scanf("%s",strg);
+
+   printf("Output: %s\n",strg);
+   return 0;
+}
