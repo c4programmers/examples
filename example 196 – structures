@@ -1,0 +1,17 @@
+/* example 196 – structures */
+#include <stdio.h>
+
+typedef struct COORDINATES {
+   int x;	// member x
+   int y;	// member y
+}point;
+
+int main(void)
+{
+   point pt;	// declare pt of type point
+   pt.x = 2;	// assign value 2 for x
+   pt.y = 2;	// assign value 2 for y
+
+   printf("Coordinates of point pt (x/y): %d,%d\n", pt.x, pt.y);
+   return 0;
+}
