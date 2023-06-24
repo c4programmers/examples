@@ -1,0 +1,22 @@
+/* example 171 – using the function sprint() */
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+   int iNum = 123;
+   float fNum = 123;
+   char	myString[20];  // Definition of a 20-field char array named myString
+
+   sprintf(myString,"%d",iNum); // Converts an int to a myString
+   printf("The content of myString is: %s\n",myString);
+
+   sprintf(myString,"%.2f",fNum); // Converts a float with 2 decimal places to myString
+   printf("The content of myString is: %s\n",myString);
+
+   sprintf(myString,"%X",iNum); // Converts an int number to a hex number
+
+   printf("The content of myString is: %s\n",myString);
+
+   return 0;
+}
