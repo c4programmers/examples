@@ -1,0 +1,13 @@
+/* example 146 - read a string with scanf() */
+#include <stdio.h>
+
+int main()
+{
+   char str[50];  //char-Array with a maximum size of 50 characters
+   int number;
+
+   printf("Please enter a number and a string: ");
+   scanf("%d %s",&number, str);
+   printf("You have entered: %d %s\n",number, str);
+   return 0;
+}
