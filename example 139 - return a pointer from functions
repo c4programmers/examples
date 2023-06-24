@@ -1,0 +1,24 @@
+/* example 139 - return a pointer from functions */
+#include <stdio.h>
+
+int* myFunction(void) {
+    static int ivar = 100;  // declare here a static variable
+
+    return (&ivar);  // return the address of ivar
+}
+
+int main (void)
+{
+    int *iptr;
+
+    iptr = myFunction();    // function call, iptr get the address of ivar
+
+    printf("Address of ivar: %p\n", iptr);
+    printf("Value of ivar: %d\n", *iptr);
+
+    *iptr = 50;  	   // change the value of ivar to 50
+
+    printf("Value of ivar: %d\n", *iptr);
+
+    return 0;
+}
