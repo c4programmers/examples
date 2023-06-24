@@ -1,0 +1,40 @@
+/* example 212 – array of structures */
+#include <stdio.h>
+#include <string.h>
+
+struct employee {
+   int id;
+   char firstName[20];
+   char lastName[20];
+   double salary;
+};
+
+const int MAX_RECORDS = 5;
+
+int main(void)
+{
+   struct employee record[MAX_RECORDS];
+
+   for(int i=0; i<MAX_RECORDS; i++) {
+      printf("Enter ID: ");
+      scanf("%d", &record[i].id);
+
+      printf("Enter first name: ");
+      scanf("%s", record[i].firstName);
+
+      printf("Enter last name: ");
+      scanf("%s", record[i].lastName);
+
+      printf("Enter salary: ");
+      scanf("%lf", &record[i].salary);
+   }
+
+   for(int i=0; i<MAX_RECORDS; i++) {
+      printf(" %d. Record of employee:\t", i+1);
+      printf("ID: %d, ", record[i].id);
+      printf("Name: %s %s, ", record[i].firstName, record[i].lastName);
+      printf("Salary: %.2f\n", record[i].salary);
+   }
+
+   return 0;
+}
