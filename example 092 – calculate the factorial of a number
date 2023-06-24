@@ -1,0 +1,22 @@
+/* example 092 – calculate the factorial of a number */
+#include <stdio.h>
+
+int main(void)
+{
+    int number, faculty;
+
+    do {
+        printf("Which factorial should be calculated? Cancel with 0: ");
+        scanf("%i",&number);
+        faculty = 1;
+        
+        for (int i = 1; i <= number; i++) {
+            faculty = faculty * i;
+        }
+
+        printf("\n%i! = %i\n", number, faculty);
+
+    }while(number != 0);
+
+    return 0;
+}
