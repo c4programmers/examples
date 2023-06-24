@@ -1,0 +1,31 @@
+/* example 233 – dynamic memory allocation */
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int size, i;
+    int* ptr;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    ptr = (int*) malloc(size * sizeof(int));
+    if (ptr == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+
+    printf("Enter %d integers:\n", size);
+    for (i = 0; i < size; i++) {
+        scanf("%d", &ptr[i]);
+    }
+
+    printf("The array you entered is:\n");
+    for (i = 0; i < size; i++) {
+        printf("%d ", ptr[i]);
+    }
+
+    free(ptr);
+    return 0;
+}
