@@ -1,0 +1,19 @@
+/* example 159 - output of capital- and lowercase letters with putchar() */
+#include <stdio.h>
+
+int main(void)
+{
+   int i;
+
+   for(i = 65; i < 91; i++)     	// capital letters from A (65) to Z (91)
+     putchar(i);
+
+   putchar('\n');              	// newline
+
+   for(i = 97; i < 123; i++)  	// lowercase letters from a (97) to z (123)
+     putchar(i);
+
+   putchar('\n');             	// newline
+
+   return 0;
+}
