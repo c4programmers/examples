@@ -1,0 +1,17 @@
+/* example 244 – random numbers */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main ()
+{
+  int randomNumber;
+  srand(time(NULL)); //Initialize the random number generator by passing a timestamp
+		
+  for(int i=0; i<=10; i++) {
+     randomNumber = rand() % 10;	// Generates a random number from 0 to 9
+     printf("\nrandom number %d = %d",i,randomNumber);
+  }
+
+  return 0;
+}
