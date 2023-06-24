@@ -1,0 +1,24 @@
+/* example 084 – sawtooth */
+#include <stdio.h>
+
+int main(void)
+{
+   int stars, runs;
+
+   printf("How many stars? ");
+   scanf("%i",&stars);
+
+   printf("How many runs? ");
+   scanf("%i",&runs);
+
+   for (int a=1; a <= runs; a++) {
+      for (int i=1; i <= stars; i++) {
+         for (int k=1; k <= i; k++)
+	    printf("*");
+
+	 printf("\n");
+      }
+   }
+   fflush(stdin);
+   return 0;
+}
