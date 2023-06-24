@@ -1,0 +1,23 @@
+/* example 206 – structures with arrays */
+#include <stdio.h>
+
+struct data {
+    int	x[3];
+    char y[3];
+} record;
+
+int main(void)
+{
+    record.x[0] = 10;
+    record.x[1] = 20;
+    record.x[2] = 30;
+
+    record.y[0] = 'A';
+    record.y[1] = 'B';
+    record.y[2] = 'C';
+
+    printf("x0=%d, x1=%d, x2=%d \n",record.x[0], record.x[1], record.x[1]);
+    printf("y0=%c, y1=%c, y2=%c ",record.y[0], record.y[1], record.y[2]);
+
+    return 0;
+}
