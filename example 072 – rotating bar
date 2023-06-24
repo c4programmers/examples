@@ -1,0 +1,24 @@
+/* example 072 – rotating bar */
+#include <stdio.h>
+#include <windows.h>
+
+int main(void)
+{
+   printf("Processing... ");
+
+   for(int i=0; i<50; ++i) {
+
+      Sleep(100); // sleep in ms
+
+      int position = i%4;
+
+      switch(position) {
+         case 0: printf("\b|"); break;
+         case 1: printf("\b/"); break;
+         case 2: printf("\b-"); break;
+         case 3: printf("\b\\"); break;
+      }
+   }
+   printf("\nDone!");
+   return 0;
+}
