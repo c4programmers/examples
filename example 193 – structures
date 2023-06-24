@@ -1,0 +1,16 @@
+/* example 193 – structures */
+#include <stdio.h>
+#include <time.h>   // need for time_t
+
+typedef struct data data;  // makes type struct data to new type data
+
+struct data {
+    time_t timestamp;   // member 1 of type time_t
+    double val;         // member 2 of type double
+    char remarks[100];  // member 3 of type char[]
+};
+
+int main(void)
+{
+    data var1;   // declaration of variable var1 of datatype data
+}
