@@ -1,0 +1,31 @@
+/* example 107 – arrays */
+#include <stdio.h>
+
+int main(void)
+{
+    double sum = 0, max, min, sales[6];
+
+    printf("Enter the sales for the week:\n");
+
+    for (int i=0; i<6; i++) {
+	printf("%d. Day: ",i+1);
+	scanf("%lf",&sales[i]);
+    }
+
+    max = sales[0];
+    min = sales[0];
+
+    for (int i=0; i<6; i++) {
+	sum = sum + sales[i];
+	if (max < sales[i])
+	    max = sales[i];
+	if (min > sales[i])
+	    min = sales[i];
+    }
+
+    printf("\nSales total: \t\t$ %.2lf\n",sum);
+    printf("Highest daily turnover: \t$ %.2lf\n",max);
+    printf("Lowest daily turnover: \t$ %.2lf\n",min);
+    fflush(stdin); 	// clear keyboard buffer
+    return 0;
+}
