@@ -1,0 +1,44 @@
+/* example 213 – complex numbers */
+#include <stdio.h>
+
+typedef struct {
+    int real;
+    int imag;
+} complex;
+
+complex add (complex z1, complex z2) {
+    complex z;
+    z.real = z1.real + z2.real;
+    z.imag = z1.imag + z2.imag;
+    return z;
+}
+
+complex sub (complex z1, complex z2) {
+    complex z;
+    z.real = z1.real - z2.real;
+    z.imag = z1.imag - z2.imag;
+    return z;
+}
+
+complex mul (complex z1, complex z2) {
+    complex z;
+    z.real = z1.real * z2.real - z1.imag * z2.imag;
+    z.imag = z1.real * z2.imag + z1.imag * z2.real;
+    return z;
+}
+
+int main(void)
+{
+    complex num1 = {3,4}, num2 = {2,5}, result;
+
+    result = add(num1, num2);
+    printf ("num1 + num2 = (%d, %di)", result.real, result.imag);
+
+    result = sub(num1, num2);
+    printf ("\nnum1 - num2 = (%d, %di)", result.real, result.imag);
+
+    result = mul(num1, num2);
+    printf ("\nnum1 * num2 = (%d, %di)", result.real, result.imag);
+
+    return 0;
+}
