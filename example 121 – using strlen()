@@ -1,0 +1,10 @@
+/* example 121 – using strlen() */
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char myArray[] = "C is great!";
+    printf("Length of %s = %d \n",myArray, strlen(myArray));
+    return 0;
+}
