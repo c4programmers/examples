@@ -1,0 +1,21 @@
+/* example 111 – pass arrays to a function */
+#include <stdio.h>
+
+double calcSum(double arr[]) {
+    double sum = 0;
+
+    for (int i = 0; i < 5; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+int main(void)
+{
+    double result, myArray[5] = {10, 5.62, 3.14, 12.85, 15.9};
+
+    result = calcSum(myArray);
+    printf("Result: %.2lf", result);
+
+    return 0;
+}
