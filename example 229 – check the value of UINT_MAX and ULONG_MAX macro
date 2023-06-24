@@ -1,0 +1,34 @@
+/* example 229 – check the value of UINT_MAX and ULONG_MAX macro */
+#include <stdio.h>
+#include <limits.h>
+#include <stdlib.h>
+
+#define TEST
+
+#if UINT_MAX == 4294967295
+    unsigned int maxVal = 4294967295;   // 32 bit system
+#else
+    unsigned int maxVal = 65535;        // 16 bit system
+#endif
+
+int main(void)
+{
+    printf("unsigned int max. value: %lu\n", maxVal);
+
+    #ifdef ULONG_MAX
+        unsigned long uLongMax = ULONG_MAX;
+        printf("unsigned long max. value: %lu\n", uLongMax);
+    #else
+        printf("No ULONG_MAX defined");
+    #endif
+
+    #ifdef TEST
+        printf("TEST\n");
+    #endif
+
+    #if defined(TEST) && defined(ULONG_MAX)
+        printf("TEST and ULONG_MAX defined");
+    #endif
+
+    return 0;
+}
