@@ -1,0 +1,33 @@
+/* example 211 – array of structures */
+#include <stdio.h>
+#include <string.h>
+
+struct employee {
+   int id;
+   char name[30];
+   double salary;
+};
+
+int main(void)
+{
+   struct employee record[2];
+
+   // 1st employee's record
+   record[0].id=1;
+   strcpy(record[0].name, "Bill Gates");
+   record[0].salary = 160000;
+
+   // 2nd employee's record
+   record[1].id=2;
+   strcpy(record[1].name, "Paul Allen");
+   record[1].salary = 90000;
+
+   for(int i=0; i<2; i++) {
+      printf(" %d. Record of employee:\t", i+1);
+      printf("ID: %d, ", record[i].id);
+      printf("Name: %s, ", record[i].name);
+      printf("Salary: %.2f\n", record[i].salary);
+   }
+
+   return 0;
+}
