@@ -1,0 +1,26 @@
+/* example 194 – structures */
+#include <stdio.h>
+#include <time.h>   // need for time_t
+
+typedef struct data data;  // makes type struct data to new type data
+
+struct data {
+    time_t timestamp;   // member 1 of type time_t
+    double val;         // member 2 of type double
+    char remarks[100];  // member 3 of type char[]
+};
+
+int main(void)
+{
+    data var1 = {               	// variable var1 of type data
+        time(NULL),		// var1.timestamp
+        3.14,			// var1.val
+        "this is a comment"   	// var1.remarks
+    };
+
+    printf("UTC time in seconds since 1970.01.01: %ju\n",var1.timestamp);
+    printf("Value: %.2lf\n",var1.val);
+    printf("Comment: %s",var1.remarks);
+
+    return 0;
+}
