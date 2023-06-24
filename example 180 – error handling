@@ -1,0 +1,26 @@
+/* example 180 – error handling */
+#include <stdio.h>
+#include <stdlib.h>  // need for function exit()
+
+int main(void)
+{
+   double dividend, divisor, quotient;
+
+   printf("Enter dividend: ");
+   scanf("%lf", &dividend);
+
+   fflush(stdin);  // clear input buffer
+
+   printf("Enter divisor: ");
+   scanf("%lf", &divisor);
+
+   if( divisor == 0.0) {
+      fprintf(stderr, "Error - Division by zero!\n");
+      exit(-1);
+   }
+
+   quotient = dividend / divisor;
+   fprintf(stdout, "Value of quotient : %lf\n", quotient );
+
+   exit(0);
+}
