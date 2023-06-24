@@ -1,0 +1,21 @@
+/* example 117 - strings */
+#include <stdio.h>
+
+int main(void)
+{
+    char myArray1[] = {'C',' ','i','s',' ','g','r','e','a','t','!'};
+    char myArray2[] = "C is great!";
+
+    int length1 = sizeof(myArray1)/sizeof(char);
+    int length2 = sizeof(myArray2)/sizeof(char);
+
+    printf("Length of myArray1: %i\n", length1);
+    for(int i=0; i<length1; i++) {
+        printf("%hi ", myArray1[i]);
+    }
+    printf("\n\nLength of myArray2: %i\n", length2);
+     for(int i=0; i<length2; i++) {
+        printf("%hi ", myArray2[i]);
+    }
+    return 0;
+}
