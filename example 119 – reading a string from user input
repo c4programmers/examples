@@ -1,0 +1,16 @@
+/* example 119 – reading a string from user input */
+#include <stdio.h>
+
+int main(void)
+{
+    char name[20];
+    printf("Enter your name: ");
+
+    if(scanf("%19s",name) != 1) {  // scanf() returns 1 if all is ok
+        printf("Input error!\n");
+        return 1;
+    }
+    printf("hello, %s\n", name);
+
+    return 0;
+}
