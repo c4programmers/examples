@@ -1,0 +1,19 @@
+/* example 141 – using printf() */
+#include <stdio.h>
+
+int main(void)
+{
+   double c = 1000.123456789;
+
+   printf("Hello World\n");
+   printf("%s\n", "Hello World");
+   printf("%5d\n",100);
+   printf("%*d\n",5,100);
+   printf("%02d.%02d.%d",4,7,2022);
+   printf("\nTest: %+.3lf", c);     
+   printf("\nTest: % 20.3lf", c); 	
+   printf("\nTest: %020.3lf", c); 
+   printf("\nTest: %.5lf (%e)", c, c); 
+
+   return 0;
+}
