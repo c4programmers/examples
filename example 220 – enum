@@ -1,0 +1,12 @@
+/* example 220 – enum */
+#include <stdio.h>
+
+enum weekday {Mon, Tue, Wed, Thu, Fri, Sat, Sun} day;
+
+int main(void)
+{
+   printf("Days of the week starting with Monday: %d,%d,%d,%d,%d,%d,%d",
+          Mon,Tue,Wed,Thu,Fri,Sat,Sun);
+
+   return 0;
+}
