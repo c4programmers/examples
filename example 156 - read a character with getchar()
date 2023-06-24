@@ -1,0 +1,11 @@
+/* example 156 - read a character with getchar() */
+#include <stdio.h>
+
+int main(void) 
+{
+   printf("Enter a character:");
+   int ch = getchar();
+
+   printf("You entered: %c (ASCII code = %i)", ch, ch);
+   return 0;
+}
