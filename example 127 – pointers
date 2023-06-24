@@ -1,0 +1,15 @@
+/* example 127 – pointers */
+#include <stdio.h>
+
+int main()
+{
+    int *ptr, var = 10, x = 20;
+
+    ptr = &var;     // ptr = address of var
+    printf("Pointer points to %p and the value is %d\n", ptr, *ptr);
+
+    ptr = &x;       // ptr = address of x
+    printf("Pointer points to %p and the value is %d\n", ptr, *ptr);
+
+    return 0;
+}
