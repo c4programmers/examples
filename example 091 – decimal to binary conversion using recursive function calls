@@ -1,0 +1,25 @@
+/* example 091 – decimal to binary conversion using recursive function calls */
+#include <stdio.h>
+
+void binaryConversion(int dec) {
+   if (dec < 2)                	//3.) termination condition
+      printf ("%d", dec);      	//    print out the first (MSB) value
+   else {                       	//4.) as long 3.) is not true, -> 5.)                            
+      binaryConversion(dec/2); 	//5.) call function again with (dec/2) as parameter
+      printf("%d", dec%2);     	//6.) print out the values of recursive functions
+   }
+}
+
+int main(void)
+{
+   int dezimal, clearPuffer;
+
+   printf("Enter a decimal number: ");
+   scanf("%i", &dezimal);     	//1.) input a decimal number
+
+   binaryConversion(dezimal); 	//2.) function call with decimal number as parameter
+
+   while ((clearPuffer = getchar()) != EOF && clearPuffer != '\n');
+
+   return 0;
+}
