@@ -1,0 +1,13 @@
+/* example 096 – function with prototype */
+#include <stdio.h>
+
+void func1(void);	// Prototype of function func1 
+
+int main(void)
+{
+   func1(); // Function call
+}
+
+void func1(void) {	// func1 is below main() function
+    printf("Hello!\n");
+}
