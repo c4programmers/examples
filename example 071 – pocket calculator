@@ -1,0 +1,50 @@
+/* example 071 – pocket calculator */
+#include <stdio.h>
+
+int main(void)
+{
+   double num1, num2, result;
+   char calcType;
+
+   printf("***** CALCULATOR *****");
+
+   printf("\nEnter the first number: ");
+   scanf("%lf",&num1);
+
+   printf("Enter the second number: ");
+   scanf("%lf",&num2);
+
+   fflush(stdin);	//clear keyboard buffer
+
+   printf("Choose a calculation method (+ - * /): ");
+   scanf("%c",&calcType);
+
+   switch (calcType) {
+      case'+':
+      result = num1 + num2;
+	    printf("%.2lf + %.2lf = %.2lf",num1, num2, result);
+	    break;
+
+      case'-':
+	    result = num1 - num2;
+	    printf("%.2lf - %.2lf = %.2lf",num1, num2, result);
+	    break;
+
+      case'*':
+	    result = num1 * num2;
+	    printf("%.2lf * %.2lf = %.2lf",num1, num2, result);
+	    break;
+
+      case'/':
+	    result = num1 / num2;
+	    printf("%.2lf / %.2lf = %.2lf",num1, num2, result);
+	    break;
+
+      default:
+	    printf("Wrong input!");
+	    break;
+   }
+
+   fflush(stdin);
+   return 0;
+}
