@@ -1,0 +1,13 @@
+/* example 142 – using printf() */
+#include <stdio.h>
+
+int main(void)
+{
+   int width = 10, accuracy = 2;
+   double value = 123.45678;
+
+   printf("1234567890\n");
+   printf("%*.*lf\n",width ,accuracy ,value);
+
+   return 0;
+}
