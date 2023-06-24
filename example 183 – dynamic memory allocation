@@ -1,0 +1,31 @@
+/* example 183 – dynamic memory allocation */
+#include <stdio.h>
+#include <stdlib.h> // for using malloc() and free()
+
+int x = 2;      // global variable
+
+int main(void)
+{
+    int y;      // local variable in main()
+    char *str;  // local char pointer in main()
+
+    y = 10;
+    printf("x is on static memory with value %d\n", x);
+    printf("y is on stack memory with value %d\n", y);
+    printf("The size of char = %d Byte\n", sizeof(char));
+
+    str = malloc(10*sizeof(char)); // allocate 10 bytes in the heap memory
+    printf("str is on heap @ address %p\n", str);
+
+    str[0] = 'a'; // Assign the character a to the address pointed to by str[0]
+    str[1] = 'b'; // Assign the character b to the address pointed to by str[1]
+    str[2] = 'c'; // Assign the character c to the address pointed to by str[2]
+
+    printf("str[0] has stored the char %c on heap @ address %p\n", str[0], &str[0]);
+    printf("str[1] has stored the char %c on heap @ address %p\n", str[1], &str[1]);
+    printf("str[2] has stored the char %c on heap @ address %p\n", str[2], &str[2]);
+
+    free(str); // deallocate the memory associated with str
+
+    return EXIT_SUCCESS;
+}
