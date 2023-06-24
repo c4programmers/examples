@@ -1,0 +1,36 @@
+/* example 176 - using fputs() */
+#include <stdio.h>
+#include <string.h>
+#include <windows.h>
+
+int main (void)
+{
+    char myString[20];
+    int c;
+    FILE *fptr;
+    strcpy(myString, "Hello World!\n");
+
+    /* write into file */
+    fptr = fopen("c:\\CProgramming\\testfile.txt", "w+");
+    fputs(myString, fptr);
+    fputs("This is the C programming language.", fptr);
+    fclose(fptr);
+
+    Sleep(1000);    // sleep 1000ms (wait here for 1 second)
+
+    /* read from file */
+    fptr = fopen("c:\\CProgramming\\testfile.txt", "r+");
+
+    while(1) {
+        c = fgetc(fptr);
+
+        if( feof(fptr) ) {
+            break ;
+        }
+        printf("%c",c);
+    }
+
+    fclose(fptr);
+
+    return(0);
+}
