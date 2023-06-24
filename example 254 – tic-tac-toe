@@ -1,0 +1,109 @@
+/* example 254 – tic-tac-toe */
+#include <stdio.h>
+
+char board[3][3]; // Tic Tac Toe board
+
+// Function to initialize the board with empty spaces
+void init_board() {
+    int i, j;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            board[i][j] = ' ';
+        }
+    }
+}
+
+// Function to print the current state of the board
+void print_board() {
+    int i, j;
+    printf("\n-------------\n");
+    for (i = 0; i < 3; i++) {
+        printf("| ");
+        for (j = 0; j < 3; j++) {
+            printf("%c | ", board[i][j]);
+        }
+        printf("\n-------------\n");
+    }
+}
+
+// Function to check if a move is valid
+int is_valid_move(int row, int col) {
+    if (row < 0 || row > 2 || col < 0 || col > 2) {
+        return 0;
+    }
+    if (board[row][col] != ' ') {
+        return 0;
+    }
+    return 1;
+}
+
+// Function to check if the game is over
+int is_game_over() {
+    int i, j;
+    // Check rows
+    for (i = 0; i < 3; i++) {
+        if (board[i][0] != ' ' && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
+            return 1;
+        }
+    }
+    // Check columns
+    for (j = 0; j < 3; j++) {
+        if (board[0][j] != ' ' && board[0][j] == board[1][j] && board[1][j] == board[2][j]) {
+            return 1;
+        }
+    }
+    // Check diagonals
+    if (board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+        return 1;
+    }
+    if (board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+        return 1;
+    }
+    // Check if board is full
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            if (board[i][j] == ' ') {
+                return 0;
+            }
+        }
+    }
+
+    // Game is tied
+    return 2;
+}
+
+// Function to make a move
+void make_move(int row, int col, char player) {
+    board[row][col] = player;
+}
+
+int main()
+{
+    int row, col, game_over = 0;
+    char player = 'X';
+    init_board();
+    printf("Tic Tac Toe\n");
+
+    while (!game_over) {
+        printf("\nPlayer %c's turn:\n", player);
+        print_board();
+        printf("Enter row and column (0-2): ");
+        scanf("%d %d", &row, &col);
+
+        if (is_valid_move(row, col)) {
+            make_move(row, col, player);
+            game_over = is_game_over();
+            if (game_over == 1) {
+                printf("\nPlayer %c wins!\n", player);
+                print_board();
+            } else if (game_over == 2) {
+                printf("\nGame tied!\n");
+                print_board();
+            }
+            player = (player == 'X') ? 'O' : 'X'; // Switch players
+        } else {
+            printf("\nInvalid move, try again.\n");
+        }
+    }
+    return 0;
+}
