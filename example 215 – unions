@@ -1,0 +1,26 @@
+/* example 215 – unions */
+#include <stdio.h>
+
+struct myStruct {
+   char a;
+   int b;
+   double c;
+};
+
+union myUnion {
+   char a;
+   int b;
+   double c;
+};
+
+int main(void)
+{
+    struct myStruct sdata;
+    union myUnion udata;
+
+    printf("Size of myStruct: %d byte\n", sizeof(struct myStruct));
+    printf("Addresses of a:%p, b:%p, c:%p\n",&sdata.a, &sdata.b, &sdata.c);
+    printf("\nSize of myUnion: %d byte\n", sizeof(union myUnion));
+    printf("Addresses of a:%p, b:%p, c:%p",&udata.a, &udata.b, &udata.c);
+    return 0;
+}
