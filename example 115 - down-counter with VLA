@@ -1,0 +1,30 @@
+/* example 115 - down-counter with VLA */
+#include <stdio.h>
+#include <windows.h>
+
+void count(int elements) {
+   int counter[elements]; // this is a VLA
+
+   for(int i=0; i<elements; i++) {
+        counter[i]=i; // fill the array counter with values 0 to elements
+   }
+
+    /* count up from 0 to elements */
+   for(int i=(elements-1); i>=0; i--) {
+        printf("\rCount... %d", counter[i]); // \r = carriage return
+        Sleep(1000); // sleep in ms
+        printf("                    "); // clear remaining text to write some spaces
+   }
+}
+
+int main(void)
+{
+    int countValue;
+
+    printf("Enter the start value for the countdown: ");
+    scanf("%i", &countValue);
+
+    count(countValue);
+
+    return 0;
+}
