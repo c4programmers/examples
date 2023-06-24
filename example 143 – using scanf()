@@ -1,0 +1,19 @@
+/* example 143 – using scanf() */
+#include <stdio.h>
+
+int main (void)
+{
+   int number1, number2;
+
+   printf("This program calculates the sum of two numbers\n");
+
+   printf("Enter the first number: ");
+   scanf("%i",&number1);
+
+   printf("Enter the second number ");
+   scanf("%i",&number2);
+
+   printf("The sum of both numbers is %i",number1 + number2);
+  
+   return 0;
+}
