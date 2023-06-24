@@ -1,0 +1,19 @@
+/* example 167 – check if the file was opened successfully */
+#include <stdio.h>
+
+int main(void)
+{
+   FILE *fptr;	// pointer fptr of type FILE
+
+   fptr = fopen("c:\\CProgramming\\helloWorld\\testfile.txt","r");
+
+   if (fptr != NULL) {
+      printf("\nFile opened successfully!");
+      fclose(fptr);
+   }
+
+   else
+      printf("\nError - File cannot be opened!");
+
+   return 0;
+}
