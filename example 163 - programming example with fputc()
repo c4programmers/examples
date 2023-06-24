@@ -1,0 +1,13 @@
+/* example 163 - programming example with fputc() */
+#include <stdlib.h>
+#include <stdio.h>
+
+int main( void )
+{
+    char myText[] = "Hello World!\n";
+
+    for(int i = 0; myText[i] != '\0'; ++i )
+        fputc( myText[i], stdout );
+
+    return 0;
+}
