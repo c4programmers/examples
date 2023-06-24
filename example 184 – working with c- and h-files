@@ -1,0 +1,33 @@
+// main.c
+/* example 184 – working with c- and h-files */
+#include <stdio.h>	// include system header file
+#include "numbers.h"	// include external header file
+
+int myValue = 10;	// global variable myValue
+
+int main()
+{
+    printf("myValue = %d\n", get_number()); 
+    return EXIT_SUCCESS;
+}
+
+
+// numbers.c
+#include "numbers.h"	// include external header file
+
+extern int myValue;	// declaration of myValue
+
+int get_number(void){
+    myValue = 20;	// modify the value of myValue
+    return myValue;	// return the new value of myValue
+}
+
+
+// numbers.h
+#ifndef NUMBERS_H_INCLUDED
+#define NUMBERS_H_INCLUDED
+
+/* Function Prototype */
+int get_number(void);
+
+#endif // NUMBERS_H_INCLUDED
