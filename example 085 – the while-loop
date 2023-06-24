@@ -1,0 +1,22 @@
+/* example 085 – the while-loop */
+#include <stdio.h>
+
+int main(void)
+{
+   int start, end, i;
+
+   printf("Enter start value: ");
+   scanf("%i",&start);
+
+   printf("Enter end value: ");
+   scanf("%i",&end);
+
+   i = start;
+
+   while (i <= end) {	 // execute as long as i is less or equal than end
+      printf("%i\n",i);
+      i++;	  	 // increase i by 1 each iteration
+   }
+   fflush(stdin);
+   return 0;
+}
