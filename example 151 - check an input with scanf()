@@ -1,0 +1,34 @@
+/* example 151 - check an input with scanf() */
+#include <stdio.h>
+
+int main(void)
+{
+   char ch1, ch2;
+   int num1, num2, check;
+
+   printf("Please enter two characters and one number: ");
+   check = scanf("%c %c %d",&ch1, &ch2, &num1);
+   fflush(stdin); 	// Clear keyboard buffer
+   printf("check = %d \n",check);
+
+   if (check == 3) {
+     printf("Input ok = %d \n",check);
+   }
+   else {
+     printf("Wrong input!");
+   }
+
+   printf("\nPlease enter two numbers: ");
+   check = scanf("%d %d",&num1, &num2);
+   fflush(stdin); 	// Clear keyboard buffer
+   printf("check = %d \n",check);
+
+   if (check == 2) {
+     printf("Input ok = %d \n",check);
+   }
+   else {
+     printf("Wrong input!");
+   }
+
+   return 0;
+}
