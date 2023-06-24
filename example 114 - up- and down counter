@@ -1,0 +1,24 @@
+/* example 114 - up- and down counter */
+#include <stdio.h>
+#include <windows.h>
+
+int main(void)
+{
+   printf("Count... ");
+
+   /* count up from 0 to 9 */
+   int counter[10] = {0,1,2,3,4,5,6,7,8,9};
+
+   for(int i=0; i<10; i++) {
+        printf("\b%d", counter[i]); // \b = backspace to clear the last number
+        Sleep(500); // sleep 500ms
+   }
+
+   /* count down from 9 to 0 */
+   for(int i=9; i>=0; i--) {
+        printf("\b%d", counter[i]); // \b = backspace to clear the last number
+        Sleep(500); // sleep 500ms
+   }
+
+   return 0;
+}
