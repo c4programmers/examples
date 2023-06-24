@@ -1,0 +1,27 @@
+/* example 068 – coffee machine simulator */
+#include <stdio.h>
+
+int main(void)
+{
+   int button;
+   double price=0;
+
+   printf("Choose you coffee (1=long, 2=medium, 3=small): ");
+   scanf("%i",&button);
+
+   switch (button) {
+        case 1:	price = 2;
+            break;
+        case 2:	price = 1.5;
+            break;
+        case 3:	price = 1;
+            break;
+        default:	printf("Please press a valid button");
+            break;
+   }
+
+   if (price != 0)
+      printf("Please insert $%.2lf",price);
+
+   return 0;
+}
