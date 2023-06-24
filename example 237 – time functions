@@ -1,0 +1,11 @@
+/* example 237 – time functions */
+#include <stdio.h>
+#include <time.h>
+
+int main() 
+{
+    time_t current_time;
+    time(&current_time);
+    printf("The current time is %ld seconds since January 1, 1970\n", current_time);
+    return 0;
+}
