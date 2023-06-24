@@ -1,0 +1,19 @@
+/* example 074 – checks whether the content of a variable is a letter or not */
+#include <stdio.h>
+#include <ctype.h>
+
+int main() 
+{
+    char input;
+    printf("Enter a character: ");
+    scanf("%c", &input);
+
+    // Check if the input value is a letter
+    if (isalpha(input)) {
+        printf("The input value '%c' is a letter.\n", input);
+    } else {
+        printf("The input value '%c' is not a letter.\n", input);
+    }
+
+    return 0;
+}
