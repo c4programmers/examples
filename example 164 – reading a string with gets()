@@ -1,0 +1,19 @@
+/* example 164 – reading a string with gets() */
+#include <stdio.h>
+#include <stdlib.h>
+ 
+int main()
+{
+   char str1[6];
+   char str2[6] = "abcde";
+   char str3[6] = "fghij";
+
+   printf("Enter a String: ");
+   gets(str1);
+ 
+   printf( "Input String: %x - %.5s\n", (unsigned int)str1, str1 );
+   printf( "Second String: %x - %.5s\n", (unsigned int)str2, str2 );
+   printf( "Third  String: %x - %.5s\n", (unsigned int)str3, str3 );
+
+   return 0;	// set the breakpoint in this line
+}
