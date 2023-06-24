@@ -1,0 +1,19 @@
+/* example 197 – structures */
+#include <stdio.h>
+
+typedef struct POINT {
+   int x;
+   int y;
+}point;
+
+int main(void)
+{
+   point pt1, pt2;		// declaration of pt1 and pt2
+   pt1.x = 1;	pt1.y = 1;	// assign x and y values for pt1
+   pt2.x = 4;	pt2.y = 3;	// assign x and y values for pt2
+
+   printf("Coordinates of pt1 (x/y): %d,%d\n", pt1.x, pt1.y);
+   printf("Coordinates of pt2 (x/y): %d,%d\n", pt2.x, pt2.y);
+
+   return 0;
+}
