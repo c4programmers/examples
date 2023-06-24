@@ -1,0 +1,23 @@
+/* example 161 - print out '\t' if the user’s input is a tab */
+#include <stdio.h>
+
+int main(void) 
+{
+   int ch;
+
+   while((ch = getchar()) != '\n' && ch != EOF) {  // Ceck if ch is not \n or EOF
+
+      if(ch == '\t') {    	// if ch is a tab
+         putchar('\'');    	// print '
+         putchar('\\');    	// print \
+         putchar('t');     	// print t
+         putchar('\'');    	// print '
+      }
+      else {            		// otherwise print the value of ch
+         putchar(ch);
+      }
+   }
+
+   printf("\nEND");
+   return 0;
+}
