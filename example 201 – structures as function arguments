@@ -1,0 +1,40 @@
+/* example 201 – structures as function arguments */
+#include <stdio.h>
+#include <string.h>
+
+typedef struct CARS {
+   char brand[50];
+   char type[50];
+   int power;
+   double price;
+}car;
+
+void printCars(struct CARS a, struct CARS b) {
+   printf( "Brand : %s\n", a.brand);
+   printf( "Type : %s\n", a.type);
+   printf( "Power : %d hp\n", a.power);
+   printf( "Price : %0.2lf\n\n", a.price);
+   printf( "Brand : %s\n", b.brand);
+   printf( "Type : %s\n", b.type);
+   printf( "Power : %d hp\n", b.power);
+   printf( "Price : %0.2lf\n", b.price);
+}
+
+int main(void)
+{
+   car car1, car2;
+
+   strcpy( car1.brand, "BMW");
+   strcpy( car1.type, "530d");
+   car1.power = 265;
+   car1.price = 65990;
+   
+   strcpy( car2.brand, "Ford");
+   strcpy( car2.type, "Mustang 5.0 GT");
+   car2.power = 421;
+   car2.price = 52900;
+
+   printCars(car1, car2);  // function call to pass structure variables car1 and car2
+
+   return 0;
+}
