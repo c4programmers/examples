@@ -1,0 +1,33 @@
+/* example 247 – ASCII code converter */
+#include <stdio.h>
+
+int main() 
+{
+    int asciiCode;
+    char character;
+    printf("Enter an ASCII code (0-127) or a character: ");
+
+    if (scanf("%d", &asciiCode) == 1) {
+        // If input is an integer, convert to character
+        if (asciiCode >= 0 && asciiCode <= 127) {
+            character = (char) asciiCode;
+            printf("The character represented by ASCII code %d is '%c'.\n", asciiCode,             
+                   character);
+        }
+        else {
+            printf("Invalid input. Please enter an ASCII code between 0 and 127 or a 
+                   character.\n");
+        }
+    }
+    else if (scanf(" %c", &character) == 1) {
+        // If input is a character, convert to ASCII code
+        asciiCode = (int) character;
+        printf("The ASCII code for character '%c' is %d.\n", character, asciiCode);
+    }
+    else {
+        printf("Invalid input. Please enter an ASCII code between 0 and 127 or a 
+               character.\n");
+    }
+
+    return 0;
+}
