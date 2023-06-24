@@ -1,0 +1,29 @@
+/* example 202 - structure pointer 1 */
+#include <stdio.h>
+
+struct numbers {	    // declaration of structure numbers
+   int num1;        // member num1
+   int num2;        // member num2
+};
+
+int main(void)
+{
+   struct numbers data;                 // struct variable data of type numbers
+   struct numbers *struct_ptr = &data;  // declares a struct pointer and assign the
+   				       // address of data
+
+   data.num1 = 2;	// direct assignment of num1 with value 2
+   data.num2 = 4;	// direct assignment of num2 with value 4
+
+   printf("Address of data = %p\n",struct_ptr);
+
+   /* access with dot operator . */
+   printf("num1 = %d\n",(*struct_ptr).num1); // access to num1 via struct pointer
+   printf("num2 = %d\n",(*struct_ptr).num2); // access to num2 via struct pointer
+   
+   /* access with arrow operator -> */
+   printf("num1 = %d\n",*struct_ptr -> num1); // access to num1 via struct pointer
+   printf("num2 = %d\n",*struct_ptr -> num2); // access to num2 via struct pointer
+
+   return 0;
+}
