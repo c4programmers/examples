@@ -1,0 +1,43 @@
+/* example 205 – structures of structures */
+#include <stdio.h>
+#include <math.h>
+
+struct point {		// declaring of structure point
+   	double x;
+   	double y;
+};
+
+struct rectangle {	// declaring of structure rectangle
+    struct point p1;
+    struct point p2;
+}box;			// declare box as structure variable
+
+int main(void)
+{
+    const double PI=3.14159265;
+    double dx, dy, slope;
+
+    printf("x-Coordinate p1: ");
+    scanf("%lf", &box.p1.x);
+
+    printf("y-Coordinate p1: ");
+    scanf("%lf", &box.p1.y);
+
+    printf("x-Coordinate p2: ");
+    scanf("%lf", &box.p2.x);
+
+    printf("y-Coordinate p2: ");
+    scanf("%lf", &box.p2.y);
+
+    printf("Coordinate p1 (x/y): [%.2lf,%.2lf]\n", box.p1.x, box.p1.y);
+    printf("Coordinate p2 (x/y): [%.2lf,%.2lf]\n", box.p2.x, box.p2.y);
+    /* calculation of the sides */
+    dx = box.p2.x - box.p1.x;
+    dy = box.p2.y - box.p1.y;
+
+    slope = atan(dy/dx);  // slope in radians
+
+    printf("Slope: %.2lf degrees\n ", slope*(360/(2*PI))); //slope in degrees
+
+    return 0;
+}
