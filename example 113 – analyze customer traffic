@@ -1,0 +1,37 @@
+/* example 113 – analyze customer traffic */
+#include <stdio.h>
+
+const int weeks = 2;
+const int days = 3;
+
+void calcVisitors( int arr[][days] ) {
+    double average=0;
+    for( int i=0; i < weeks; i++) {
+        for( int j=0; j < days; j++) {
+            average+=arr[i][j];
+        }
+    }
+    printf("\nVisitors total : %d\n", (int)average);
+    printf("Average per day: %.2lf\n", average/(weeks*days));
+}
+
+int main(void)
+{
+    int visitors[weeks][days];
+
+    printf("Enter the visitors:(Thu = day 1, Fri = day 2, Sat = day 3\n\n");
+
+    for(int i=0; i < weeks; i++) {
+        for(int j=0; j < days; j++) {
+            printf("%d. week, day %d: ", i+1, j+1);
+
+            if( scanf("%d", &visitors[i][j]) != 1 ) {
+            printf("Input error\n");
+            return 1;
+            }
+        }
+    }
+    calcVisitors(visitors);
+
+    return 0;
+}
