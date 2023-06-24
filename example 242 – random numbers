@@ -1,0 +1,15 @@
+/* example 242 – random numbers */
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+  int randomNumber;
+
+  for(int i=1; i<=10; i++) {
+     randomNumber = rand();	// Generates a random number between 0 and RAND_MAX
+     printf("\nrandom number %d = %d",i,randomNumber);
+  }
+
+  return 0;
+}
