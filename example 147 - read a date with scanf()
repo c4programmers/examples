@@ -1,0 +1,14 @@
+/* example 147 - read a date with scanf() */
+#include <stdio.h>
+
+int main(void)
+{
+   int d1,d2,d3;
+   char c;
+
+   printf("Enter a date (yyyy.mm.dd): ");
+   scanf("%d %c %d %c %d", &d1,&c,&d2,&c,&d3);
+   printf("You entered: %0.2d/%0.2d/%d\n", d3,d2,d1);
+    
+   return 0;
+}
