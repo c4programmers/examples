@@ -1,0 +1,42 @@
+/* example 097 – functions with prototypes */
+#include <stdio.h>
+
+/* Function prototypes */
+void func1(void);
+int func2(void);
+int func3(int x);
+double func4(int x, const double y);
+
+int main(void)
+{
+   int iValue, para1 = 10;
+   const double pi = 3.14;
+
+   func1();
+
+   iValue = func2();
+   printf("\nfunc2: %d", iValue);
+
+   iValue = func3(100);
+   printf("\nfunc3: %d", iValue);
+
+   printf("\nfunc4: %lf", func4(para1, pi));
+
+   return 0;
+}
+
+void func1(void) {
+    printf("Hello!");
+}
+
+int func2(void) {
+    return 5;
+}
+
+int func3(int x) {
+    return x * 5;
+}
+
+double func4(int x, const double y) {
+    return x * y;
+}
