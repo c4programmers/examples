@@ -1,0 +1,45 @@
+/* example 253 – sort random numbers with bubble sort */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define ARRAY_SIZE 10
+
+int main()
+{
+    int numbers[ARRAY_SIZE];
+    int i, j, temp;
+
+    srand(time(NULL)); 	// Seed the random number generator
+
+    // Fill the array with random numbers
+    for (i = 0; i < ARRAY_SIZE; i++) {
+        numbers[i] = rand() % 100;
+    }
+
+    // Print the unsorted array
+    printf("Unsorted array:\n");
+    for (i = 0; i < ARRAY_SIZE; i++) {
+        printf("%d ", numbers[i]);
+    }
+    printf("\n");
+
+    // Sort the array using the bubble sort algorithm
+    for (i = 0; i < ARRAY_SIZE - 1; i++) {
+        for (j = 0; j < ARRAY_SIZE - i - 1; j++) {
+            if (numbers[j] > numbers[j+1]) {
+                temp = numbers[j];
+                numbers[j] = numbers[j+1];
+                numbers[j+1] = temp;
+            }
+        }
+    }
+
+    // Print the sorted array
+    printf("Sorted array:\n");
+    for (i = 0; i < ARRAY_SIZE; i++) {
+        printf("%d ", numbers[i]);
+    }
+    printf("\n");
+    return 0;
+}
