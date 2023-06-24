@@ -1,0 +1,28 @@
+/* example 069 – example with if and else-if */
+#include <stdio.h>
+
+int main(void)
+{
+   int score;
+
+   printf("Enter your achieved score (0 to 10): ");
+   scanf("%i",&score);
+
+   if((score > 10) || (score <= 0))
+      printf("\nError, please insert a valid score ");
+
+   else if(score == 10)
+      printf("\nResult: \tA");
+   else if(score == 9)
+      printf("\nResult: \tB");
+   else if(score == 8)
+      printf("\nResult: \tC");
+   else if(score == 7)
+      printf("\nResult: \tD");
+   else
+      printf("\nResult: \tF");
+
+   printf("\n\n\nKey:\n10=A\n9=B\n8=C\n7=D\n<7=F\n\n");
+
+   return 0;
+}
