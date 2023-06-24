@@ -1,0 +1,20 @@
+/* example 182 – stack overflow */
+#include<stdio.h>
+
+int counter = 0;    // global variable
+
+void stack_overflow(int x) {
+    if (x == 0)
+        return;
+    x+=10;
+    printf("x = %d\n",x);
+    stack_overflow(x);
+}
+
+int main(void)
+{
+    int x = 10;
+    stack_overflow(x);
+    printf("counter = %d\n",counter);
+    return EXIT_SUCCESS;
+}
