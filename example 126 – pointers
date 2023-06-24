@@ -1,0 +1,18 @@
+/* example 126 – pointers */
+#include <stdio.h>
+
+int main()
+{
+   int var = 1234567, x;
+   int *ptr;   	// ptr is an int pointer
+
+   ptr = &var;   // ptr = address of var
+   x = *ptr;     // x = value of element pointed to by ptr
+
+   printf("The value of x = %d\n", x); // x holds the value of var
+   printf("The address of var = %p\n", ptr);
+   printf("The address of x = %p\n", &x);
+   printf("The address of ptr = %p", &ptr);
+
+   return 0;
+}
