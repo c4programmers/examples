@@ -1,0 +1,11 @@
+/* example 095 – function without prototype */
+#include <stdio.h>
+
+void func1(void) {
+    printf("Hello!\n");
+}
+
+int main(void)
+{
+   func1(); // Function call
+}
