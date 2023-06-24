@@ -1,0 +1,16 @@
+/* example 216 – unions */
+#include <stdio.h>
+
+union myUnion {
+   int a;
+   char b;
+};
+
+int main(void)
+{
+    union myUnion udata;  // create variable udata of type union myUnion
+    udata.a = 65;	 // assign value 65 to int a
+    printf("\nSize of myUnion: %d bytes\n", sizeof(union myUnion));
+    printf("a = %d, b = %c",udata.a, udata.b);
+    return 0;
+}
