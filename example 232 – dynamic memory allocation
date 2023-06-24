@@ -1,0 +1,19 @@
+/* example 232 – dynamic memory allocation */
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int* num = (int*)malloc(sizeof(int)); // Allocate memory for an integer
+
+    if (num == NULL) {
+        printf("Failed to allocate memory\n");
+        return 1;
+    }
+
+    *num = 42; // Initialize the allocated memory
+    printf("Value: %d\n", *num);
+
+    free(num); // Deallocate the memory
+    return 0;
+}
