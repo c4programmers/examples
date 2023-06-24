@@ -1,0 +1,28 @@
+/* example 198 – structures */
+#include <stdio.h>
+#include <math.h>
+
+typedef struct POINT {
+   int x;
+   int y;
+}point;
+
+int main(void)
+{
+   double a, b, distance; //sqrt(double);
+   point pt1,pt2;
+   pt1.x = 2; pt1.y = 1;
+   pt2.x = 4; pt2.y = 2;
+
+   printf("Coordinates pt1 (x/y): %d,%d\n", pt1.x, pt1.y);
+   printf("Coordinates pt2 (x/y): %d,%d\n", pt2.x, pt2.y);
+
+   a = pt2.x-pt1.x;
+   b = pt2.y-pt1.y;
+
+   distance = sqrt(a*a + b*b);
+
+   printf("Distance: %.2lf", distance);
+
+   return 0;
+}
