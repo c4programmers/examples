@@ -1,0 +1,23 @@
+/* example 090 – decimal to binary conversion */
+#include <stdio.h>
+
+int main(void)
+{
+   int decNumber, remainder, tempNumber, clear_puffer;
+
+   printf("Enter a decimal number: ");
+   scanf("%i",&decNumber);
+
+   printf("%d (MSB first) = ",decNumber);
+
+   do {
+      remainder=decNumber%2;
+      printf("%i",remainder);	// Print out binary number with MSB first
+      tempNumber=decNumber/2;
+      decNumber=tempNumber;
+   }while (tempNumber != 0);	// Divide as long tempNumber is not 0
+
+   while ((clear_puffer = getchar()) != EOF && clear_puffer != '\n');
+
+   return 0;
+}
