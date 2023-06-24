@@ -1,0 +1,32 @@
+/* example 088 – the while-loop */
+#include <stdio.h>
+#include <math.h>
+
+int main(void)
+{
+   double number, PI=3.14159;
+   int start, end, increment, i, clearPuffer;
+
+   printf("Enter the start angle in degrees: ");
+   scanf("%d",&start);
+
+   printf("Enter the end angle in degrees: ");
+   scanf("%d",&end);
+
+   printf("Enter the increment angle in degrees: ");
+   scanf("%d",&increment);
+
+   printf("\nAngle\tsin\tcos\ttan\n");
+   printf("_______________________________\n");
+
+   i = start;
+   while (i <= end) {
+      number = (i*(PI/180)); 	// Conversion rad to degree
+      printf("%d\t%.2lf\t%.2lf\t%.2lf\n", i, sin(number), cos(number), tan(number));
+      i = i + increment;
+   }
+
+   while ((clearPuffer = getchar()) != EOF && clearPuffer != '\n');
+
+   return 0;
+}
