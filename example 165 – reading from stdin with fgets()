@@ -1,0 +1,14 @@
+/* example 165 – reading from stdin with fgets() */
+#include <stdio.h>
+
+int main(void)
+{
+   char name[10];
+
+   printf("Please enter your name: ");
+   fgets(name, 10, stdin);
+
+   printf("Hello %s",name);
+
+   return 0;
+}
