@@ -1,0 +1,16 @@
+/* example 134 – array of pointers */
+#include <stdio.h>
+
+int main (void)
+{
+    int ivar[] = {2, 8, 5, 9};
+    int *iptr[4];		// declare an array of 4 pointers
+
+    for (int i = 0; i < 4; i++) {
+        iptr[i] = &ivar[i];     // assign the address of each array element
+
+        printf("Value of ivar[%d] = %d\n", i, *iptr[i]);
+    }
+
+    return 0;
+}
