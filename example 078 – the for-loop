@@ -1,0 +1,21 @@
+/* example 078 – the for-loop */
+#include <stdio.h>
+
+int main(void)
+{
+   float num=0, sum=0, average;
+
+   printf("Enter 10 numbers:\n");
+
+   for (int i=1; i<=10; i++) {
+      printf("%d number: ",i);
+      scanf("%f",&num);
+      sum = sum + num;
+   }
+   average = sum / 10;
+   printf("You entered in sum: %.2f",sum);
+   printf("\nAverage = %.2f",average);
+
+   fflush(stdin);
+   return 0;
+}
