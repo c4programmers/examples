@@ -1,0 +1,12 @@
+/* example 122 – using strcpy() */
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char src[] = "C is great!";
+    char dest[20];
+    strcpy(dest, src);
+    printf("src = \"%s\", dest = \"%s\"",src, dest);
+    return 0;
+}
