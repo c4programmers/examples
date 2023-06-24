@@ -1,0 +1,13 @@
+/* example 149 - filter input values with scanf() and invert with ^ */
+#include <stdio.h>
+
+int main(void)
+{
+   char str[20];
+   printf("Enter only letters, no numers!: ");
+
+   scanf("%10[^0-9]", str);  //all ASCII characters are read except for 0 to 9
+   printf("First 10 letters: %s",str);
+
+   return 0;
+}
