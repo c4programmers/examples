@@ -1,0 +1,50 @@
+/* example 236 – linked list */
+#include <stdio.h>
+#include <stdlib.h>
+
+// define the structure of a node in the linked list
+struct node {
+    int data;
+    struct node* next;
+};
+
+int main() 
+{
+    // create the first node of the linked list
+    struct node* head = NULL;
+    struct node* current = NULL;
+    struct node* new_node = NULL;
+
+    // create a few more nodes and add them to the list
+    for (int i = 0; i < 5; i++) {
+	// allocate memory for the new node
+        new_node = (struct node*) malloc(sizeof(struct node)); 
+        new_node->data = i + 1; // assign data to the new node
+        new_node->next = NULL; // set the next pointer to null
+
+        if (head == NULL) {
+            head = new_node; // if the linked list is empty, make the new node the head
+            current = head;
+        } else { 
+    // otherwise, add the new node to the end of the list
+            current->next = new_node; 
+            current = current->next;
+        }
+    }
+
+    // print the data and address of each node in the list
+    current = head;
+    while (current != NULL) {
+        printf("Data: %d, Address: %p\n", current->data, current);
+        current = current->next;
+    }
+
+    // free the memory used by the nodes
+    current = head;
+    while (current != NULL) {
+        struct node* temp = current;
+        current = current->next;
+        free(temp);
+    }
+    return 0;
+}
