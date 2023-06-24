@@ -1,0 +1,23 @@
+/* example 208 – array of structures */
+#include <stdio.h>
+
+typedef struct data {
+    int counter;        // member 1 of type int
+    double val;         // member 2 of type double
+}data;
+
+int main(void)
+{
+    data sArray[100];   // Array of type date
+
+    for(int i=0; i<100; i++) {   // assign 100 values
+        sArray[i].counter = i+1;
+        sArray[i].val = 3.14/(i+1);
+    }
+
+    for(int i=0; i<10; i++) {   	// print 10 values
+        printf("%d.\tcounter: %d \t %.10lf\n",i+1, sArray[i].counter, sArray[i].val);
+    }
+
+    return 0;
+}
