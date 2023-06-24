@@ -1,0 +1,36 @@
+/* example 195 – structures */
+#include <stdio.h>
+#include <string.h>
+
+typedef struct CARS {
+   char brand[50];
+   char type[50];
+   int power;
+   double price;
+} car;
+
+int main(void)
+{
+   car car1, car2;
+
+   strcpy( car1.brand, "BMW");
+   strcpy( car1.type, "530d");
+   car1.power = 265;
+   car1.price = 65990;
+   strcpy( car2.brand, "Ford");
+   strcpy( car2.type, "Mustang 5.0 GT");
+   car2.power = 421;
+   car2.price = 52900;
+
+   printf( "Brand : %s\n", car1.brand);
+   printf( "Type : %s\n", car1.type);
+   printf( "Power : %d hp\n", car1.power);
+   printf( "Price : %0.2lf\n\n", car1.price);
+
+   printf( "Brand : %s\n", car2.brand);
+   printf( "Type : %s\n", car2.type);
+   printf( "Power : %d hp\n", car2.power);
+   printf( "Price : %0.2lf\n", car2.price);
+
+   return 0;
+}
