@@ -1,0 +1,60 @@
+/* example 123 – using strcat() */
+#include <stdio.h>
+#include <string.h>
+const int maxLength = 20;
+
+/* replaces any existing newline character with a space */
+void replace_nl_to_space(char str[]) {
+  int n = strlen(str);
+  for(int i = 0; i < n; i++) {  // check each character for newline
+    if( str[i] == '\n' ) {      // if a newline is present
+      str[i] = ' ';             // replace it with a space
+    }
+  }
+}
+
+/* replaces the newline character at last position with a NULL character */
+void replace_nl_to_null(char str[]) {
+  int n = strlen(str)-1;		// n = the penultimate position of string surename
+  if(str[n] == '\n') {  		// check the character for newline
+    str[n] = '\0';      		// if it is present replace it with a NULL
+  }
+}
+
+int main(void)
+{
+  char name[maxLength*2];
+  char firstName[maxLength], surename[maxLength];
+
+  printf("First Name: ");
+  if(fgets(firstName, maxLength, stdin) == NULL) {
+    printf("Input error!\n");
+    return 1;
+  }
+
+  replace_nl_to_space(firstName);
+  printf("Surename: ");
+  if(fgets(surename, maxLength, stdin) == NULL) {
+    printf("Input error!\n");
+    return 1;
+  }
+
+  replace_nl_to_null(surename);
+  /* copy firstName to name */
+  if(strncpy(name, firstName, maxLength) == NULL) {
+    printf("strncpy() error!\n");
+    return 1;
+  }
+
+  /* determine the remaining space in name */
+  size_t len = maxLength*2 - strlen(name)+1;
+  /* append surename to name */
+  if(strncat(name, surename, len) == NULL) {
+    printf("strncat() error!\n");
+    return 1;
+  }
+
+  /* output the entire string */
+  printf("Hello %s\n", name);
+  return 0;
+}
