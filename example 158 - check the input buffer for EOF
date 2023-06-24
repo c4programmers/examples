@@ -1,0 +1,12 @@
+/* example 158 - check the input buffer for EOF */
+#include <stdio.h>
+
+int main(void) 
+{
+   int ch;
+  
+   while((ch = getchar())!= EOF) {   // Ceck if EOF occurs
+      printf("%c", ch);
+   }
+   return 0;
+}
