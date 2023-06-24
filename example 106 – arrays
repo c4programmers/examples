@@ -1,0 +1,22 @@
+/* example 106 – arrays */
+#include <stdio.h>
+
+int main(void)
+{
+   int bin[8], decNumber, clearBuffer;
+
+   printf("Enter a decimal number between 0 and 255: ");
+   scanf("%i",&decNumber);
+
+   for(int i=0; i<8; i++) {
+        bin[i]=((decNumber >> i)&1);        // 1.) Fill the array
+   }
+
+   for(int i=7; i>=0; i--) {
+        printf("%d",bin[i]);                // 2.) Read the array upside down
+   }
+
+   while ((clearBuffer = getchar()) != EOF && clearBuffer != '\n');
+
+   return 0;
+}
