@@ -1,0 +1,20 @@
+/* example 075 – Checks if a string contains only uppercase letters or not */
+#include <stdio.h>
+#include <ctype.h>
+
+int main() 
+{
+    char str[] = "HELLO";
+    int i;
+
+    for (i = 0; str[i]; i++) {
+        if (!isupper(str[i])) {
+            printf("String contains non-uppercase letter.\n");
+            return 0;
+        }
+    }
+
+    printf("String contains only uppercase letters.\n");
+
+    return 0;
+}
