@@ -1,0 +1,64 @@
+/* example 136 – chessboard */
+#include <stdio.h>
+#include <stdlib.h>
+
+// Prototypes
+void fieldOutput(int *field);
+void move(int *field, int *posX, int *posY, char moving);
+
+int main(void)
+{
+    int field[8][8] = { 0 }, posX=0, posY=0;
+    char moving;
+
+    field[posY][posX] = 1; 	// set game piece
+
+    do {
+        fieldOutput(&field[0][0]);
+
+        printf("\nmoving [w = up, a = left, s = down, d = right] (exit with x): ");
+        scanf("%c", &moving);
+
+        move(&field[0][0], &posX, &posY, moving);
+
+        fflush(stdin);  		// clear keyboard buffer
+        system("Cls");		// clear screen
+    }while(moving != 'x');
+
+    return 0;
+}
+
+void fieldOutput(int *field) {	// output playing field
+    printf("\n");
+    int i, j;
+
+    for(i=0; i<8; i++) { 	// loop rows, y-axis
+        for(j=0; j<8; j++) 	// loop columns, x-axis
+            printf("%d ", *(field+i*8+j));
+
+        printf("\n");
+    }
+}
+
+void move(int *field, int *posX, int *posY, char moving) {  // move the game piece
+    *(field + *posY * 8 + *posX) = 0; // clear old position
+
+    switch(moving) {		     // choose a new position
+        case 'w': (*posY)--; break;
+        case 'a': (*posX)--; break;
+        case 's': (*posY)++; break;
+        case 'd': (*posX)++; break;
+    }
+
+    // check border crossing. If true, set new position
+    if(*posX < 0) 
+        *posX = 7;
+    else if(*posX > 7) 
+        *posX = 0;
+    else if(*posY < 0) 
+        *posY = 7;
+    else if(*posY > 7) 
+        *posY = 0;
+
+    *(field + *posY * 8 + *posX) = 1; // set new position
+}
