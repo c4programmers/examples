@@ -1,0 +1,11 @@
+/* example 140 – using fprintf() */
+#include <stdio.h>
+
+int main(void)
+{
+   fprintf(stdout,"\n%s\n", "Hello World"); 	//stdout: output on screen
+
+   fprintf(stderr,"\n%s\n", "Error!"); 		//stderr: output on screen
+
+   return 0;
+}
