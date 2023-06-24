@@ -1,0 +1,13 @@
+/* example 148 – filter input values with scanf() */
+#include <stdio.h>
+
+int main(void)
+{
+   char str[20];
+   printf("Enter only numbers! ");
+
+   scanf("%10[0-9]", str);  //only numbers from 0 to 9 are read
+   printf("First 10 numbers: %s",str);
+
+   return 0;
+}
