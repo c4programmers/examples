@@ -1,0 +1,33 @@
+// main.c
+/* example 183 – working with c- and h-files */
+#include <stdio.h>	// include system header file
+#include "numbers.h"	// include external header file
+
+int main()
+{
+    printf("Number 1: %d\n", get_number1());  // print the return value of get_number1
+    printf("Number 2: %d\n", get_number2());  // print the return value of get_number2
+    return EXIT_SUCCESS;
+}
+
+
+// numbers.c
+#include "numbers.h"	// include external header file
+
+int get_number1(void){
+    return 1;		// return the value 1
+}
+int get_number2(void){
+    return 2; 		// return the value 2
+}
+
+
+// numbers.h
+#ifndef NUMBERS_H_INCLUDED
+#define NUMBERS_H_INCLUDED
+
+/* Function Prototypes */
+int get_number1(void);
+int get_number2(void);
+
+#endif // NUMBERS_H_INCLUDED
