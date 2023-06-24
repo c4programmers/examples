@@ -1,0 +1,13 @@
+/* example 135 – array of pointers */
+#include <stdio.h>
+
+int main (void)
+{
+    char *cptr[] = {"Hi", "i am", "a pointer", "array"};
+
+    for (int i = 0; i < 4; i++) {
+        printf("Value of cptr[%d] = %s\n", i, cptr[i]);
+    }
+
+    return 0;
+}
