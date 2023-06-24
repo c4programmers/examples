@@ -1,0 +1,27 @@
+/* example 204 – structures of structures */
+#include <stdio.h>
+
+struct point {		// declaration of structure point
+   int x;
+   int y;
+};
+
+struct rectangle	{	// declaration of structure rectangle
+   struct point topleft;
+   struct point bottomright;
+} box;	// declaration of structure variable box
+
+int main(void)
+{
+   box.topleft.x = 5;		// assign x and y values for box.topleft
+   box.topleft.y = 10;
+
+   box.bottomright.x = 8;
+   box.bottomright.y = 2;	// assign x and y values for box.bottomright
+
+   printf("Coordinates of topleft (x/y): %d,%d\n", box.topleft.x, box.topleft.y);
+   printf("Coordinates of bottomright (x/y): %d,%d\n", box.bottomright.x,
+       box.bottomright.y);
+
+   return 0;
+}
