@@ -1,0 +1,39 @@
+/* example 245 – dice game – using random numbers */
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    int dice1, dice2, total;
+    char choice;
+
+    // Seed the random number generator
+    srand(time(NULL));
+
+    do {
+        // Roll the dice
+        dice1 = rand() % 6 + 1;
+        dice2 = rand() % 6 + 1;
+        total = dice1 + dice2;
+
+        printf("You rolled %d and %d, for a total of %d\n", dice1, dice2, total);
+
+        // Check for a win or loss
+        if (total == 7 || total == 11) {
+            printf("You win!\n");
+        } else if (total == 2 || total == 3 || total == 12) {
+            printf("You lose!\n");
+        } else {
+            printf("Roll again...\n");
+        }
+
+        // Ask the player if they want to play again
+        printf("Do you want to roll again? (y/n) ");
+        scanf(" %c", &choice);
+
+    } while (choice == 'y' || choice == 'Y');
+
+    printf("Thanks for playing!\n");
+    return 0;
+}
