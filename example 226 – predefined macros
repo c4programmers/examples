@@ -1,0 +1,12 @@
+/* example 226 – predefined macros */
+#include <stdio.h>
+
+int main(void)
+{
+    printf("Name and location of the source file: %s\n",__FILE__);
+    printf("This printf() is on line %d\n",__LINE__);
+    printf("Compiled on %s at %s\n",__DATE__, __TIME__);
+    printf("This compiler is %sANSI-compliant!\n",__STDC__ == 1? "": "not ");
+
+   return 0;
+}
