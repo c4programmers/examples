@@ -1,0 +1,13 @@
+/* example 222 – macro vs. symbolic constant */
+#include <stdio.h>
+
+#define VALUE 12345		// symbolic constant VALUE
+#define ADD(x, y) (x + y)	// macro ADD
+
+int main(void)
+{
+   printf("Value: %d\n", VALUE);  // print the value of the symbolic constant VALUE
+   printf("ADD: %d\n", ADD(1,2)); // pass parameters 1 and 2 to the macro ADD
+				 // and print the return value of the macro ADD
+   return 0;
+}
