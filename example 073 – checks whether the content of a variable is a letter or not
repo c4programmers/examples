@@ -1,0 +1,18 @@
+/* example 073 – checks whether the content of a variable is a letter or not */
+#include <stdio.h>
+
+int main() 
+{
+    char input;
+    printf("Enter a letter: ");
+    scanf("%c", &input);
+
+    // Check if the input value is a letter
+    if ((input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'Z')) {
+        printf("The input value '%c' is a letter.\n", input);
+    } else {
+        printf("The input value '%c' is not a letter.\n", input);
+    }
+
+    return 0;
+}
