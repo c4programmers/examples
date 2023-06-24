@@ -1,0 +1,21 @@
+/* example 227 – the predefined macro __STDC_VERSION__ */
+#include <stdio.h>
+
+int main(void)
+{
+    #if defined(__STDC_VERSION__) && (__STDC_VERSION__ == 199409L)
+        printf("Represents the C90 standard, also known as C89 or ANSI C\n");
+    #elif defined(__STDC_VERSION__) && (__STDC_VERSION__ == 199901L)
+        printf("Represents the C99 standard\n");
+    #elif defined(__STDC_VERSION__) && (__STDC_VERSION__ == 201112L)
+        printf("Represents the C11 standard\n");
+    #elif defined(__STDC_VERSION__) && (__STDC_VERSION__ == 201710L)
+        printf("Represents the C17 standard\n");
+    #elif defined(__STDC_VERSION__) && (__STDC_VERSION__ == 202112L)
+        printf("Represents the C2x standard\n");
+    #else
+        printf("Not C90 or later standard compliant\n");
+    #endif
+
+   return 0;
+}
