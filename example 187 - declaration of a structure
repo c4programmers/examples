@@ -1,0 +1,19 @@
+/* example 187 - declaration of a structure */
+#include <stdio.h>
+
+struct numbers {	    // declaration of structure numbers
+   int num1;        // member num1
+   int num2;        // member num2
+};
+
+int main(void)
+{
+   struct numbers data;	// struct variable data of type numbers
+
+   data.num1 = 2;	// direct assignment of num1 with value 2
+   data.num2 = 4;	// direct assignment of num2 with value 4
+
+   printf("%d + %d = %d\n",data.num1, data.num2, (data.num1 + data.num2));
+
+   return 0;
+}
