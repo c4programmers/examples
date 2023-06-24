@@ -1,0 +1,28 @@
+/* example 169 – read data from a file */
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+   FILE *fptr;
+   char *file = "c:\\CProgramming\\helloWorld\\testfile.txt";
+   int character;
+
+   fptr = fopen(file,"r");
+
+   if (fptr == NULL) {
+      exit(1);  //Exits the program, clearing all buffers and closing all open files
+   }
+
+   else {
+      character = fgetc(fptr);
+
+      while (!feof(fptr)) {
+         putchar(character);
+	 character = fgetc(fptr);
+      }
+      fclose(fptr);
+   }
+
+   return 0;
+}
