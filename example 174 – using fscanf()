@@ -1,0 +1,18 @@
+/* example 174 – using fscanf() */
+#include <stdio.h>
+
+int main(void)
+{
+    int myInt;
+    char myString[256];
+    FILE * file = fopen( "testfile.txt", "r" );
+
+    if( file ) {
+        fscanf( file, "%s", &myString[0] );   // Addres of first character
+        fscanf( file, "%i", &myInt );         // Address of myInt
+
+        printf( "String read: %s\n", myString );
+        printf( "Integer read: %d\n", myInt );
+    }
+    return 0;
+}
