@@ -1,0 +1,18 @@
+/* example 181 – error handling */
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+
+int main()
+{
+    FILE *fp;
+
+    /* try to open a file which does not exist */
+    fp = fopen("C:\\CProgramming\\newfile.txt", "r"); 
+
+    printf("Value of errno = %d\n ",errno);
+    printf("Error message: %s\n ",strerror(errno));
+    perror("This is the message from perror");
+
+    return 0;
+}
