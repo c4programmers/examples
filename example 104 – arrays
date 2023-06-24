@@ -1,0 +1,20 @@
+/* example 104 – arrays */
+#include <stdio.h>
+
+int main(void)
+{
+    int iArray[3];
+
+    printf("Enter three integer values!\n");
+
+    for(int i=0; i<=2; i++) {
+        printf("%d. value: ",i+1);
+        scanf("%i", &iArray[i]);
+    }
+
+    for(int i=0; i<=2; i++) {
+        printf("iArray[%d] = %d @ Address %p\n", i, (iArray[i]*iArray[i]), &iArray[i]);
+    }
+
+    return 0;
+}
