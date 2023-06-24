@@ -1,0 +1,103 @@
+/* example 178 - using fread() */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MY_DATA_FILE "c:\\CProgramming\\mydata.dat"
+
+typedef struct _address {
+   char name[50];
+   char location[100];
+   unsigned int postcode;
+} Address;
+
+/* if present, replace '\n' with '\0' @ position -1*/
+void eraseNewLine(char *str) {
+   size_t position = strlen(str);
+   if(str[position - 1] == '\n') 
+      str[position - 1] = '\0';
+}
+
+void dumpBuffer(FILE *fp) {
+   int c;
+   while((c = fgetc(fp)) != EOF && c != '\n');
+}
+
+void writeDataInFile(void) { // write data  in file
+   Address data;
+   printf("Name:\t\t");
+   if( fgets(data.name, 50, stdin) == NULL ) { // input name
+      fprintf(stderr, "Input error\n");
+      return; // Use an empty expression to return void
+   }
+
+   eraseNewLine(data.name);
+
+   printf("Location:\t");
+   if( fgets(data.location, 100, stdin) == NULL ) { // input location
+      fprintf(stderr, "Input error\n");
+      return; // Use an empty expression to return void
+   }
+
+   eraseNewLine(data.location);
+
+   printf("Postcode:\t");
+   if( scanf("%u", &data.postcode) != 1 ) {
+      fprintf(stderr, "Input error\n");
+      return; // Use an empty expression to return void
+   }
+
+   dumpBuffer(stdin);
+
+   FILE *fp = fopen(MY_DATA_FILE, "a+b"); // write in bin format @ the end
+   if( fp == NULL ) {
+      printf("Error when opening: %s\n", MY_DATA_FILE);
+      exit(EXIT_FAILURE);
+   }
+   if(fwrite(&data, sizeof(data), 1, fp) != 1) {
+      fprintf(stderr,"Error writing to %s\n", MY_DATA_FILE);
+      fclose(fp);
+      return; // Use an empty expression to return void
+   }
+   fclose(fp);
+}
+
+void readDataFromFile(void) { // read data from file and print out on screen
+   Address data;
+   FILE *fp = fopen(MY_DATA_FILE, "r+b");
+   if( fp == NULL ) {
+      fprintf(stderr, "Error when opening: %s\n", MY_DATA_FILE);
+      return; // Use an empty expression to return void
+   }
+   while(fread(&data, sizeof(data), 1, fp) == 1 ) {
+      printf("Name:\t\t%s\n", data.name);
+      printf("Location:\t%s\n", data.location);
+      printf("Postcode:\t%u\n\n", data.postcode);
+   }
+   fclose(fp);
+}
+
+int main(void) 
+{
+   int input = 0;
+
+   do {
+      printf("[1] New data\n");
+      printf("[2] Output data\n");
+      printf("[3] Exit program\n\n");
+      printf("Your selection : ");
+
+     if( scanf("%d", &input) != 1 ) {
+        fprintf(stderr,"Input error\n");
+        input = 0;
+     }
+
+     dumpBuffer(stdin);
+
+     switch( input ) {
+        case 1 : writeDataInFile( ); break;   // input = 1 -> write data
+        case 2 : readDataFromFile( ); break;  // input = 2 -> read data
+     }
+   }while(input!=3); // 3 = exit program
+
+   return 0;
+}
