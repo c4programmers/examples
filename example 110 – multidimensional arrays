@@ -1,0 +1,26 @@
+/* example 110 – multidimensional arrays */
+#include <stdio.h>
+
+const int COLUMN = 3;
+const int ROW = 3;
+const int LEVEL = 3;
+
+int main(void)
+{
+  int myArray[LEVEL][ROW][COLUMN], counter = 0;
+
+  // Using a nested for loop to store values in a 3d array
+  for (int i = 0; i < LEVEL; i++) {
+    printf("Level %d:\n",i);
+
+    for (int j = 0; j < ROW; j++) {
+      for (int k = 0; k < COLUMN; k++) {
+         printf("[%d][%d][%d] ",i,j,k);
+
+         if(k == 2) //new line after 3 columns
+            printf("\n");
+      }
+    }
+  }
+  return 0;
+}
