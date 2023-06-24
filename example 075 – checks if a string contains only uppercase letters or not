@@ -1,4 +1,4 @@
-/* example 075 – Checks if a string contains only uppercase letters or not */
+/* example 075 – checks if a string contains only uppercase letters or not */
 #include <stdio.h>
 #include <ctype.h>
 
