@@ -1,0 +1,27 @@
+/* example 166 - reading a line from a file with fgets() */
+
+/* Enter the path of the file incl. the filename e.g. C:\Examples\file1.txt
+ * The filename must not exceed 20 characters */
+
+#include <stdio.h>
+#include <stdlib.h>
+#define LINE_LENGTH 80
+
+int main(void)
+{
+   FILE *source;
+   char puffer[LINE_LENGTH], filename[20];
+
+   printf("Which file do you want to open for reading? ");
+   scanf("%s",filename);
+
+   if( (source=fopen(filename,"r")) == NULL) {
+      fprintf(stderr, "The file %s cannot be opened\n", filename);
+      return EXIT_FAILURE;
+   }
+
+   while(fgets(puffer, LINE_LENGTH, source))
+      fputs(puffer, stdout);
+
+   return EXIT_SUCCESS;
+}
