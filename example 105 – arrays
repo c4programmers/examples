@@ -1,0 +1,24 @@
+/* example 105 – arrays */
+#include <stdio.h>
+
+int main(void) {
+
+  int value[5], n, sum = 0;
+  double average;
+
+  printf("Enter number of elements: ");
+  scanf("%d", &n);
+
+  for(int i=0; i < n; i++) {
+    printf("Enter number%d: ",i+1);
+    scanf("%d", &value[i]);
+
+    sum += value[i]; // adding integers to the sum variable
+  }
+
+  average = (double)sum / n; // convert sum to double
+
+  printf("Average of %d numbers: %.2lf",n, average);
+
+  return 0;
+}
